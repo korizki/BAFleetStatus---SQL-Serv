@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,500&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    
+}
+html{
+    scroll-behavior: smooth;
+}
+:root{
+    --blue1 : #495371;
+    --dark: #203239;
+    --blue2: #74959A;
+    --line : rgba(161, 161, 161, 0.250);
+}
+header{
+    box-shadow: 0 0 10px 0 var(--line);
+    padding: 20px;
+    text-align: center;
+    color: var(--blue1);
+    background-image: url('../bg.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:left;
+}
+.brandptba{
+    width: 150px;
+    position: absolute;
+    top: 15px;
+    left: 30px;
+}
+main{
+    padding: 30px 50px;
+    color: var(--blue1);
+    background: rgb(247, 247, 247);
+}
+.boxlocation > h3{
+    padding: 16px 0px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background: var(--blue1);
+    color: white;
+    text-align: center;
+}
+.boxeqtype{
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+
+}
+.boxeqtype > div{
+    flex: 1;
+}
+.boxShovel{
+    padding: 20px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px var(--line);
+    background: white;
+}
+.boxdetailshovel{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+    padding: 10px 0;
+    cursor: pointer;
+}
+.boxdetailshovel:hover{
+    background: rgba(199, 199, 199, 0.20);
+}
+.shovelsummary{
+    display: flex;
+    justify-content: space-between;
+    background: var(--blue1);
+    color: white;
+    border-radius: 5px;
+}
+.shovelsummary >div{
+    padding: 15px 30px;
+    line-height: 1.5;
+}
+.shovelsummary >div> h3{
+    margin-block-end: 8px;
+}
+.shovelsummary{
+    text-align: center;
+}
+.boxdetailshovel > img{
+    width: 40px;
+}
+.shovelstatus{
+    padding: 10px 30px;
+    border-radius: 4px;
+    color: white;
+}
+
+.aptarea{
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 0 var(--line);
+    border: 1px solid var(--line);
+    padding: 20px 30px;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.aptarea > div{
+    display: flex;
+    gap: 15px;
+    flex: 3;
+    flex-wrap: wrap;
+}
+.aptarea > div > p{
+    padding: 10px 25px;
+    background: var(--blue1);
+    color: white;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+.aptarea > h2{
+    flex : 1;
+}
+footer{
+    padding: 30px;
+    font-weight: 300;
+    background: var(--dark);
+    color: white;
+    font-size: 1rem;
+    margin-block-start: 50px;
+    text-align: center;
+}
+.boxDate{
+    padding: 15px;
+    border: 1px solid var(--line);
+    background: white;
+    margin-top: 20px;
+    box-shadow: 0 0 10px 0 var(--line);
+    width: 60%;
+    border-radius: 7px;
+    margin-inline-start: 20%;
+}
+.Ready, .aptarea > div > .Ready{
+    background: rgba(133, 240, 133);
+    box-shadow: 0 0 10px var(--line);
+}
+.Standby, .aptarea > div > .Standby{
+    background: rgb(148, 176, 255);
+    box-shadow: 0 0 10px var(--line);
+}
+.General, .aptarea > div > .General{
+    background: rgb(255, 229, 112);
+    box-shadow: 0 0 10px var(--line);
+}
+.Breakdown, .aptarea > div > .Breakdown{
+    background: rgb(255, 112, 112);
+    box-shadow: 0 0 10px var(--line);
+}
+.boxDate>form{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+}
+.boxDate > form >input{
+    padding: 8px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+}
+.boxDate >form>button{
+    background: var(--blue1);
+    color: white;
+    padding: 11px 25px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid var(--blue);
+}
+.boxDate>form>button:hover,.boxDate>form>button:focus{
+    border: 1px solid var(--blue);
+    outline: none;
+    box-shadow: 0 0 10px 0 rgba(61, 61, 61, 0.412);
+}
+.boxinputlocation{
+    border: 1px solid var(--line);
+    padding: 30px;
+    background: white;
+    box-shadow: 0 0 10px 0 var(--line);
+    width: 70%;
+    margin-inline-start: 15%;
+    margin-top: 50px;
+    border-radius: 8px;
+    color: var(--blue1);
+}
+.boxinputlocation > .header{
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--line);
+    margin-block-end: 30px;
+}
+.boxinputlocation > .header >p{
+    margin-top: 50px;
+    right: 17%;
+    padding: 10px 20px;
+    font-size: 0.8rem;
+}
+.boxinputlocation > form{
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+.boxinputlocation > form > select,input, button{
+    padding: 8px 12px;
+    border: 1px solid var(--line);
+    border-radius: 5px;
+}
+.boxinputlocation >form>button{
+    padding: 11px 20px;
+    background: var(--blue1);
+    color: white;
+    cursor: pointer;
+}
+
+.boxinputlocation>form>button:hover,:focus{
+    border: 1px solid var(--blue1);
+    outline: none;
+    box-shadow: 0 0 10px 0 rgba(41, 89, 104, 0.623);
+}
+.boxinputlocation>form>select:hover,:focus{
+    box-shadow: 0 0 10px 0 rgba(41, 89, 104, 0.223);
+}
+.successinputlocation{
+    color:rgb(133, 240, 133);
+    border: 1px solid rgb(133, 240, 133);
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+.failedinputlocation{
+    color:rgb(255, 112, 112) !important;
+    border: 1px solid rgb(255, 112, 112) !important;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+.headeradmin{
+    width: 80%;
+    margin-inline-start: 10%;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 var(--line);
+    padding: 20px;
+    background: var(--blue1);
+    color: white;
+    border: 1px solid var(--line);
+    margin-bottom: 20px;
+}
+.boxmenu{
+    padding: 30px 10px;
+}
+.boxmenu>button{
+    padding: 12px 30px;
+    background: white;
+    color: var(--blue1);
+    margin: 0 15px;
+    font-size: 1rem;
+}
+.boxmenu>button:hover, button:focus{
+    box-shadow: 0 0 10px white;
+    outline: none;
+    border: 1px solid white;
+    cursor: pointer;
+}
+.outerform{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.40);
+    display: none;
+}
+.cancelbtnform{
+    margin-top: 20px;
+    background: white;
+    border: 1px solid var(--line);
+    color: var(--blue1);
+    cursor: pointer;
+    padding: 12px 30px;
+}
+.cancelbtnform:hover, .cancelbtnform:focus{
+    background: var(--blue1);
+    color: white;
+    border: 1px solid var(--blue1);
+}

@@ -26,6 +26,10 @@ header{
     background-repeat: no-repeat;
     background-position:left;
 }
+a{
+    text-decoration: none;
+    color: inherit;
+}
 .brandptba{
     width: 150px;
     position: absolute;
@@ -296,4 +300,60 @@ footer{
     background: var(--blue1);
     color: white;
     border: 1px solid var(--blue1);
+}
+.content{
+    display: flex;
+    justify-content: center;
+    padding: 40px 60px;
+    gap: 50px;
+}
+.content>figure>img{
+    width: 450px;
+}
+figcaption{
+    flex-direction: column;
+    padding-block-start: 60px;
+}
+figcaption>h2{
+    font-size: 3.2rem;
+    color: var(--blue1);
+}
+figcaption>p{
+    font-size: 1.3rem;
+    margin: 8px 0;
+    color: var(--blue1);
+}
+figcaption>a{
+    background: var(--blue1);
+    color: white;
+    display: inline-block;
+    padding: 15px 30px;
+    margin-top: 25px;
+    border-radius: 9px;
+}
+.btngo:hover{
+    box-shadow: 0 0 10px 0 var(--blue1);
+}
+.contentlogin{
+    padding: 70px;
+    background: var(--dark);
+    margin-top: 70px;
+    text-align: center;
+    color: white;
+}
+.contentlogin>h2{
+    font-size: 2.3rem;
+}
+.contentlogin>p{
+    margin: 20px 0;
+}
+.btnlogin{
+    display: inline-block;
+    margin-block-start: 30px;
+    border: 2px solid white;
+    padding: 17px 40px;
+}
+.btnlogin:hover{
+    background: var(--blue1);
+    color: white;
 }

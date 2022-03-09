@@ -62,3 +62,11 @@ function closeforminputflowcoal(){
     const updateflowcoal = document.getElementById('updateflowcoal');
     updateflowcoal.style.display = 'none';
 }
+function showlogin(){
+    const loginform = document.querySelector('.loginbox');
+    loginform.style.display = "flex";
+}
+function hidelogin(){
+    const loginform = document.querySelector('.loginbox');
+    loginform.style.display = "none";
+}

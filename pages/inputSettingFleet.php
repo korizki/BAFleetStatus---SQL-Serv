@@ -34,19 +34,19 @@
             ?>
             
         </div>
-        <form action="../codes/handleSubmitLocation.php" method="post" style="justify-content: center">
+        <form action="../codes/handleSubmitLocation.php" method="post" autocomplete="off" style="justify-content: center">
             <label for="unitname">Unit Name</label>
-            <select name="unitname" id="unitname">
-                <option value="" selected disabled>-- Choose Shovel --</option>
+            <input list="listloader" name="unitname" id="unitname" >
+            <datalist id="listloader">
                 <?php 
-                    $sqlunit = mysqli_query($connection, "SELECT * FROM t_unit WHERE unit_type = 'Shovel PC-3000' ORDER BY unit_name");
-                    while($rowunit = mysqli_fetch_array($sqlunit)){
+                    $sqlunit = $connection->query("SELECT * FROM t_unit WHERE unit_type IN ('Shovel PC-3000','PC 1250') ORDER BY unit_name");
+                    while($rowunit = $sqlunit->fetch(PDO::FETCH_ASSOC)){
                         ?>
                             <option value="<?php echo $rowunit['unit_name']?>"><?php echo $rowunit['unit_name']?></option>
                         <?php
                     }
                 ?>
-            </select>
+            </datalist>
             <label for="totalhauler">Total Hauler</label>
             <input type="number" name="totalhauler" id="totalhauler" style="width: 100px">
             <button type="submit" name="submitdatafleet"><i class="fa fa-paper-plane" style="margin-inline-end: 8px" ></i>Submit Data</button>
@@ -92,19 +92,19 @@
             ?>
             
         </div>
-        <form action="../codes/handleSubmitLocation.php" method="post" style="justify-content: center">
+        <form action="../codes/handleSubmitLocation.php" autocomplete="off" method="post" style="justify-content: center">
             <label for="unitname">Unit Name</label>
-            <select name="unitname" id="unitname">
-                <option value="" selected disabled>-- Choose Shovel --</option>
+            <input list="listloadcoal" name="unitname" id="unitname">
+            <datalist id="listloadcoal">
                 <?php 
-                    $sqlunit = mysqli_query($connection, "SELECT * FROM t_unit WHERE unit_type IN ('Excavator','Excavator Tanah','Excavator Coal') ORDER BY unit_name");
-                    while($rowunit = mysqli_fetch_array($sqlunit)){
+                    $sqlunit = $connection->query("SELECT * FROM t_unit WHERE unit_type IN ('Excavator','Excavator Tanah','Excavator Coal') ORDER BY unit_name");
+                    while($rowunit = $sqlunit->fetch(PDO::FETCH_ASSOC)){
                         ?>
                             <option value="<?php echo $rowunit['unit_name']?>"><?php echo $rowunit['unit_name']?></option>
                         <?php
                     }
                 ?>
-            </select>
+            </datalist>
             <label for="totalhauler">Total Hauler</label>
             <input type="number" name="totalhauler" id="totalhauler" style="width: 100px">
             <button type="submit" name="submitdatafleetcoal"><i class="fa fa-paper-plane" style="margin-inline-end: 8px" ></i>Submit Data</button>

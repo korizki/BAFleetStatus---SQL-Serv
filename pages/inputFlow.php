@@ -34,43 +34,43 @@
             ?>
             
         </div>
-        <form action="../codes/handleSubmitLocation.php" method="post" style="justify-content: center">
+        <form action="../codes/handleSubmitLocation.php" method="post" autocomplete="off" style="justify-content: center">
             <label for="unitname">Unit Name</label>
-            <select name="unitname" id="unitname">
-                <option value="" selected disabled>-- Choose Shovel --</option>
+            <input list="unitnamesf" name="unitname" id="unitname" style="width: 150px">
+            <datalist id="unitnamesf">
                 <?php 
-                    $sqlunit = mysqli_query($connection, "SELECT * FROM t_unit WHERE unit_type = 'Shovel PC-3000' ORDER BY unit_name");
-                    while($rowunit = mysqli_fetch_array($sqlunit)){
+                    $sqlunit = $connection->query("SELECT * FROM t_unit WHERE unit_type IN ('Shovel PC-3000','PC 1250') ORDER BY unit_name");
+                    while($rowunit = $sqlunit->fetch(PDO::FETCH_ASSOC)){
                         ?>
                             <option value="<?php echo $rowunit['unit_name']?>"><?php echo $rowunit['unit_name']?></option>
                         <?php
                     }
                 ?>
-            </select>
+            </datalist>
             <label for="from">From</label>
-            <select name="from" id="from">
-                <option value="" selected disabled>-- Select Location --</option>
+            <input list="location2" name="from" id="from" style="width: 150px">
+            <datalist id="location2">
                 <?php 
-                    $sqlarea = mysqli_query($connection, "SELECT * FROM t_area WHERE area_type = 'Overbudden' ORDER BY area_name");
-                    while($rowarea = mysqli_fetch_array($sqlarea)){
+                    $sqlarea = $connection->query("SELECT * FROM t_area WHERE area_type = 'Overbudden' ORDER BY area_name");
+                    while($rowarea = $sqlarea->fetch(PDO::FETCH_ASSOC)){
                         ?>
                             <option value="<?php echo $rowarea['area_name']?>"><?php echo $rowarea['area_name']?></option>
                         <?php
                     }
                 ?>
-            </select>
+            </datalist>
             <label for="to">To</label>
-            <select name="to" id="to">
-                <option value="" selected disabled>-- Select Location --</option>
+            <input list="location3" name="to" id="to" style="width: 150px">
+            <datalist id="location3">
                 <?php 
-                    $sqlarea = mysqli_query($connection, "SELECT * FROM t_area WHERE area_type = 'Overbudden' ORDER BY area_name");
-                    while($rowarea = mysqli_fetch_array($sqlarea)){
+                    $sqlarea = $connection->query("SELECT * FROM t_area WHERE area_type = 'Overbudden' ORDER BY area_name");
+                    while($rowarea = $sqlarea->fetch(PDO::FETCH_ASSOC)){
                         ?>
                             <option value="<?php echo $rowarea['area_name']?>"><?php echo $rowarea['area_name']?></option>
                         <?php
                     }
                 ?>
-            </select>
+            </datalist>
             <button type="submit" name="submitdataflow"><i class="fa fa-paper-plane" style="margin-inline-end: 8px" ></i>Submit Data</button>
         </form>
         <div style="display: flex; justify-content: flex-end">
@@ -114,43 +114,44 @@
             ?>
             
         </div>
-        <form action="../codes/handleSubmitLocation.php" method="post" style="justify-content: center">
+        <form action="../codes/handleSubmitLocation.php" method="post" autocomplete="off" style="justify-content: center">
             <label for="unitname">Unit Name</label>
-            <select name="unitname" id="unitname">
-                <option value="" selected disabled>-- Choose Excavator --</option>
+            <input list="unitnamescoal" name="unitname" id="unitname" style="width: 150px">
+            <datalist id="unitnamescoal">
                 <?php 
-                    $sqlunit = mysqli_query($connection, "SELECT * FROM t_unit WHERE unit_type IN ('Excavator', 'Excavator Tanah','Excavator Coal') ORDER BY unit_name");
-                    while($rowunit = mysqli_fetch_array($sqlunit)){
+                    $sqlunit = $connection->query("SELECT * FROM t_unit WHERE unit_type IN ('Excavator', 'Excavator Tanah','Excavator Coal') ORDER BY unit_name");
+                    while($rowunit = $sqlunit->fetch(PDO::FETCH_ASSOC)){
                         ?>
                             <option value="<?php echo $rowunit['unit_name']?>"><?php echo $rowunit['unit_name']?></option>
                         <?php
                     }
                 ?>
-            </select>
+            </datalist>
             <label for="from">From</label>
-            <select name="from" id="from">
-                <option value="" selected disabled>-- Select Location --</option>
+            <input list="locationcoalfrom" name="from" id="from" style="width: 150px">
+            <datalist id="locationcoalfrom">
                 <?php 
-                    $sqlarea = mysqli_query($connection, "SELECT * FROM t_area WHERE area_type = 'Coal' ORDER BY area_name");
-                    while($rowarea = mysqli_fetch_array($sqlarea)){
+                    $sqlarea = $connection->query("SELECT * FROM t_area WHERE area_type = 'Coal' ORDER BY area_name");
+                    while($rowarea = $sqlarea->fetch(PDO::FETCH_ASSOC)){
                         ?>
                             <option value="<?php echo $rowarea['area_name']?>"><?php echo $rowarea['area_name']?></option>
                         <?php
                     }
                 ?>
-            </select>
+            </datalist>
             <label for="to">To</label>
-            <select name="to" id="to">
+            <input list="locationcoalto" name="to" id="to" style="width: 150px">
+            <datalist id="locationcoalto">
                 <option value="" selected disabled>-- Select Location --</option>
                 <?php 
-                    $sqlarea = mysqli_query($connection, "SELECT * FROM t_area WHERE area_type = 'Coal' ORDER BY area_name");
-                    while($rowarea = mysqli_fetch_array($sqlarea)){
+                    $sqlarea = $connection->query("SELECT * FROM t_area WHERE area_type = 'Coal' ORDER BY area_name");
+                    while($rowarea = $sqlarea->fetch(PDO::FETCH_ASSOC)){
                         ?>
                             <option value="<?php echo $rowarea['area_name']?>"><?php echo $rowarea['area_name']?></option>
                         <?php
                     }
                 ?>
-            </select>
+            </datalist>
             <button type="submit" name="submitdataflowcoal"><i class="fa fa-paper-plane" style="margin-inline-end: 8px" ></i>Submit Data</button>
         </form>
         <div style="display: flex; justify-content: flex-end">

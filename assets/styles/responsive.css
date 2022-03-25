@@ -1,0 +1,201 @@
+@media screen and (max-width: 425px){
+    .headerhome{
+        padding: 10px;
+
+    }
+    .judulapt{
+        margin-top: 0px !important;
+    }
+    .setUnit{
+        font-size: 0.7rem;
+        text-align: center;
+    }
+    .brandptba{
+        width: 90px;
+        top: 15px;
+        left: 15px;
+    }
+    figcaption{
+        padding-block-start: 0px;
+        text-align: center;
+    }
+    .pit3>h4{
+        width: 120px;
+    }
+    figcaption>h2{
+        font-size: 2.5rem;
+        line-height: 1.5;
+    }
+    figcaption>p{
+        font-size: 0.9rem;
+    }
+    figcaption>a{
+        width: 100%;
+    }
+    .content{
+        flex-direction: column;
+        padding: 40px 15px;
+        gap: 20px;
+    }
+    .content>figure>img{
+        width: 100%;
+    }
+    .contentlogin{
+        padding: 40px 20px;
+    }
+    .contentlogin>h2{
+        font-size: 1.8rem;
+        line-height: 1.5;
+    }
+    .contentlogin>p{
+        font-weight: 300;
+        font-size: 0.9rem;
+        padding: 20px;
+        line-height: 1.5;
+    }
+    footer{
+        font-size: 0.8rem;
+        line-height: 1.7;
+        padding: 12px;
+    }
+    .loginbox{
+        flex-direction: column;
+        align-items: center;
+    }
+    .loginform{
+        width: 90%;
+        margin-inline-start: 0;
+        height: auto;
+        padding: 30px 0;
+        display: flex;
+        flex-direction: column;
+        margin-block-start: 10%;
+    }
+    .closebtn{
+        top: 7%;
+        right: 10%;
+    }
+    .loginform>div{
+        flex: none;
+        width: 100%;
+        padding: 30px;
+    }
+    /* halaman Summary Breakdown */
+    header>.judul{
+        font-size: 1.5rem;
+        margin-block-start: 30px;       
+        background-size: auto; 
+    }
+    main{
+        padding: 30px 15px;
+        font-size: 12px;
+    }
+    .boxeqtype{
+        flex-direction: column;
+    }
+    .boxlocation>h3{
+        padding: 10px 0;
+        font-size: 1rem;
+    }
+ 
+    .boxShovel{
+        padding: 10px;
+        margin-bottom: 30px;
+    }
+    .boxdetailshovel{
+        gap: 15px;
+    }
+    .boxdetailshovel>img{
+        width: 20px;
+    }
+    .shovelstatus{
+        padding: 10px;
+        width: 150px;
+        text-align: center;
+    }
+    .shovelsummary>div{
+        padding: 10px;
+        line-height: 1;
+    }
+    
+    .shovelsummary>div>p{
+        font-size: 0.6rem;
+    }
+    .aptarea{
+        padding: 15px;
+        gap: 20px;
+    }
+    .aptarea>h2{
+        width: 100%;
+        font-size: 0.9rem;
+    }
+    .shovelsummary>div{
+        border-radius: 6px;
+    }
+    .aptarea>div{
+        gap: 6px;
+    }
+    .aptarea>div>p{
+        padding: 4px 10px;
+        font-size: 0.6rem;
+    }
+    .coalsummary>div>h3{
+        font-size: 0.8rem;
+    }
+    .coalsummary>div>p{
+        text-align: center;
+    }
+    .coalsummary>.shovelstatus{
+        font-size: 0.7rem;
+        width: 180px;
+    }
+    .coalsummary>p{
+        font-size: 0.7rem;
+    }
+    .headeradmin{
+        padding: 10px;
+        border-radius: 6px;
+    }
+    .headeradmin>details>summary{
+        font-size: 0.8rem;
+    }
+    .boxmenu{
+        padding:20px 5px;
+    }
+    .boxmenu>button{
+        width: 100%;
+        margin: 8px 0;
+        font-size: 0.8rem;
+    }
+    .boxinputlocation{
+        width: 90%;
+        margin-inline-start: 5%;
+        padding: 20px;
+        margin-top: 20px;
+    }
+    .boxinputlocation>form{
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+    .boxinputlocation>form>select,input,button{
+        width: 100%;
+    }
+    .header>h2{
+        text-align: center;
+        margin-top: 50px;
+    }
+    .boxinputlocation>.header>p{
+        margin-top: 25px;
+    }
+    .coaltitle>h1{
+        font-size: 0.9rem;
+        transform: translateY(-10px);
+    }
+    
+}
+@media screen and (max-width: 375px){
+    .shovelstatus{
+        width: 200px;
+    }
+}

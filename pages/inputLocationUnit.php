@@ -34,18 +34,19 @@
             ?>
             
         </div>
-        <form action="../codes/handleSubmitLocation.php" method="post">
+        <form action="../codes/handleSubmitLocation.php" autocomplete="off" method="post">
             <label for="unitname">Unit Name</label>
-            <select name="unitname" id="unitname">
+            <input list="listeq" name="unitname" id="unitname">
+            <datalist id="listeq">
                 <?php 
-                    $sqlunit = mysqli_query($connection, "SELECT * FROM t_unit WHERE unit_type IN ('Dozer','Grader','Shovel PC-3000','Excavator','Water Tank','Compac','PC200') ORDER BY unit_name");
-                    while($rowunit = mysqli_fetch_array($sqlunit)){
+                    $sqlunit = $connection->query("SELECT * FROM t_unit WHERE unit_type IN ('Dozer','Belaz','PC 1250','HD PPA','Grader','Shovel PC-3000','Excavator','Water Tank','Compac','PC200') ORDER BY unit_name");
+                    while($rowunit = $sqlunit->fetch(PDO::FETCH_ASSOC)){
                         ?>
                             <option value="<?php echo $rowunit['unit_name']?>"><?php echo $rowunit['unit_name']?></option>
                         <?php
                     }
                 ?>
-            </select>
+            </datalist>
             <label for="area">Area</label>
             <select name="area" id="area">
                 <option value="" selected disabled>-- Select Area --</option>
@@ -103,32 +104,31 @@
                 } 
             ?>
         </div>
-        <form action="../codes/handleSubmitLocation.php" method="post">
+        <form action="../codes/handleSubmitLocation.php" autocomplete="off" method="post">
             <label for="unitname">Unit Name</label>
-            <select name="unitname" id="unitname">
+            <input list="listeqcoal" name="unitname" id="unitname" style="width: 150px;">
+            <datalist id="listeqcoal">
                 <?php 
-                    $sqlunit = mysqli_query($connection, "SELECT * FROM t_unit WHERE unit_type IN ('Excavator','Excavator Coal','Excavator Tanah') ORDER BY unit_name");
-                    while($rowunit = mysqli_fetch_array($sqlunit)){
+                    $sqlunit = $connection->query("SELECT * FROM t_unit WHERE unit_type IN ('Excavator','Excavator Coal','Excavator Tanah') ORDER BY unit_name");
+                    while($rowunit = $sqlunit->fetch(PDO::FETCH_ASSOC)){
                         ?>
                             <option value="<?php echo $rowunit['unit_name']?>"><?php echo $rowunit['unit_name']?></option>
                         <?php
                     }
                 ?>
-            </select>
+            </datalist>
             <label for="area">Area</label>
             <select name="area" id="area">
-                <option value="" selected disabled>-- Select Area --</option>
+                <option value="" selected disabled>-- Area --</option>
                 <option value="PIT 2">PIT 2</option>
                 <option value="PIT 3">PIT 3</option>
                 <option value="Workshop">Workshop</option>
             </select>
-            <label for="location">Location</label>
-            <select name="location" id="location">
-                <option value="" selected disabled>-- Select Location --</option>
-                <option value="Front">Front PIT</option>
-                <option value="Jalan">Jalan PIT</option>
-                <option value="Disposal">Disposal PIT</option>
-                <option value="Workshop">Workshop</option>
+            <label for="loadertype">Tipe Loader</label>
+            <select name="loadertype" id="loadertype" style="width: 150px;">
+                <option value="" selected disabled>-- Type Loader --</option>
+                <option value="Excavator Coal">Excavator Coal</option>
+                <option value="Excavator Tanah">Excavator Tanah</option>
             </select>
             <button type="submit" name="submitdatacoal"><i class="fa fa-paper-plane" style="margin-inline-end: 8px" ></i>Submit Data</button>
         </form>

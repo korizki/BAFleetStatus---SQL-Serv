@@ -1,5 +1,4 @@
 <?php 
-
-$connection = mysqli_connect("localhost","root","","ptba_cisea");
-
+$serverName = "localhost"; //serverName\instanceName
+$connection = new PDO("sqlsrv:Server=localhost;Database=ptba_cisea", "sa", "SNCMineLinkPTBA2019");
 ?>

@@ -52,7 +52,7 @@ main{
 .boxeqtype{
     display: flex;
     justify-content: space-around;
-    gap: 30px;
+    gap: 20px;
 }
 .boxeqtype > div{
     flex: 1;
@@ -63,6 +63,12 @@ main{
     border-radius: 8px;
     box-shadow: 0px 0px 10px var(--line);
     background: white;
+}
+.boxShovel>h1{
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    padding-left: 20px;
+    border-bottom: 2px solid var(--blue1);
 }
 .boxdetailshovel{
     display: flex;
@@ -78,16 +84,38 @@ main{
 .shovelsummary{
     display: flex;
     justify-content: space-between;
-    background: var(--blue1);
-    color: white;
+    color: var(--blue1);
+    background: white;
     border-radius: 5px;
+    gap: 10px;
 }
 .shovelsummary >div{
-    padding: 15px 30px;
+    padding: 12px 20px;
     line-height: 1.5;
+    border-radius: 10px;
+    background: var(--blue1);
+    color: white;
+    border: 1px solid var(--line);
+    margin-bottom: 10px;
+    flex: 1;
 }
-.shovelsummary >div> h3{
-    margin-block-end: 8px;
+.setUnit{
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-align: center;
+}
+.shovelsummary>div>p{
+    font-size: 0.9rem;
+    text-align: left;
+    line-height: 1.7;
+}
+.shovelsummary>div>p>span{
+    float: right;
+}
+.shovelsummary>div>h3{
+    padding-bottom: 5px;
+    margin-block-end: 5px;
+    border-bottom: 2px solid white;
 }
 .shovelsummary{
     text-align: center;
@@ -107,19 +135,21 @@ main{
     box-shadow: 0 0 10px 0 var(--line);
     border: 1px solid var(--line);
     padding: 20px 30px;
-    display: flex;
-    gap: 40px;
     align-items: center;
     margin-bottom: 20px;
 }
 .aptarea > div{
     display: flex;
-    gap: 15px;
+    gap: 7px;
     flex: 3;
     flex-wrap: wrap;
 }
+.coalsummary>div>p{
+    text-align: center;
+}
 .aptarea > div > p{
-    padding: 10px 25px;
+    padding: 8px 15px;
+    font-size: 0.7rem !important;
     background: var(--blue1);
     color: white;
     border-radius: 4px;
@@ -128,6 +158,7 @@ main{
 }
 .aptarea > h2{
     flex : 1;
+    margin-block-end: 15px;
 }
 footer{
     padding: 25px;
@@ -370,7 +401,7 @@ figcaption>a{
     padding: 8px 15px;
     opacity: 0.6;
 }
-.loginbtn:hover, :focus{
+.loginbtn:hover, .loginbtn:focus{
     opacity: 1;
     box-shadow: none;
     border: none;
@@ -439,9 +470,22 @@ figcaption>a{
     color: rgb(185, 185, 185);
     position: absolute;
     top: 27%; 
-    right: 28%;
+    right: 27%;
 }
 .closebtn:focus{
     border: none;
     box-shadow: none;
+}
+.coaltitle>h1{
+    font-size: 1.2rem;
+    border-bottom: none;
+    background: var(--blue1);
+    color: white;
+    display: inline-block;
+    padding: 12px 20px 15px 20px;
+    position: relative;
+    transform: translateY(-20px);
+    border-radius: 0 0 8px 8px;
+    box-shadow: 5px 5px 20px 0 rgba(128, 128, 128, 0.300);
+    margin-bottom: 10px;
 }

@@ -6,8 +6,8 @@ if(isset($_POST['submitdata'])){
     $area = $_POST['area'];
     $location = $_POST['location'];
     // query tambah data lokasi
-    $insertdata = mysqli_query($connection, "INSERT INTO t_location VALUES (NULL, '$unitname','$area','$location',current_timestamp())");
-    $update = mysqli_query($connection, "UPDATE t_unit SET area = '$area', location = '$location' WHERE t_unit.unit_name = '$unitname'");
+    $insertdata = $connection->query("INSERT INTO t_location (loc_unit_name, loc_area, loc_location, updated_at) VALUES ('$unitname','$area','$location',getDate())");
+    $update = $connection->query("UPDATE t_unit SET area = '$area', location = '$location' WHERE t_unit.unit_name = '$unitname'");
     if($insertdata){
         header('Location: ../pages/admin.php?statusinput=success');
     } else {
@@ -17,10 +17,10 @@ if(isset($_POST['submitdata'])){
 if(isset($_POST['submitdatacoal'])){
     $unitname = $_POST['unitname'];
     $area = $_POST['area'];
-    $location = $_POST['location'];
+    $loadertype = $_POST['loadertype'];
     // query tambah data 
-    $insertdata = mysqli_query($connection, "INSERT INTO t_location VALUES (NULL, '$unitname','$area','$location',current_timestamp())");
-    $update = mysqli_query($connection, "UPDATE t_unit SET area = '$area', location = '$location' WHERE t_unit.unit_name = '$unitname'");
+    $insertdata = $connection->query("INSERT INTO t_location (loc_unit_name, loc_area, loc_location, updated_at) VALUES ('$unitname','$area','$loadertype',getDate())");
+    $update = $connection->query("UPDATE t_unit SET area = '$area', unit_type = '$loadertype' WHERE t_unit.unit_name = '$unitname'");
     if($insertdata){
         header('Location: ../pages/admin.php?statusinput=successcoal');
     } else {
@@ -31,7 +31,7 @@ if(isset($_POST['submitdatafleet'])){
     $unitname = $_POST['unitname'];
     $totalfleet = $_POST['totalhauler'];
     // query tambah data 
-    $insertdata = mysqli_query($connection, "INSERT INTO t_fleet VALUES (NULL, '$unitname','$totalfleet',current_timestamp())");
+    $insertdata = $connection->query("INSERT INTO t_fleet (fleet_unit, fleet_hauler, fleet_updated_at) VALUES ('$unitname','$totalfleet',getDate())");
     if($insertdata){
         header('Location: ../pages/admin.php?statusinput=fleetsuccess');
     } else {
@@ -42,7 +42,7 @@ if(isset($_POST['submitdatafleetcoal'])){
     $unitname = $_POST['unitname'];
     $totalfleet = $_POST['totalhauler'];
     // query tambah data 
-    $insertdata = mysqli_query($connection, "INSERT INTO t_fleet VALUES (NULL, '$unitname','$totalfleet',current_timestamp())");
+    $insertdata = $connection->query( "INSERT INTO t_fleet (fleet_unit, fleet_hauler, fleet_updated_at) VALUES ('$unitname','$totalfleet',getDate())");
     if($insertdata){
         header('Location: ../pages/admin.php?statusinput=fleetcoalsuccess');
     } else {
@@ -54,8 +54,8 @@ if(isset($_POST['submitdatabd'])){
     $status = $_POST['type'];
     $detail = $_POST['detailstatus'];
     // query tambah data 
-    $insertdata = mysqli_query($connection, "INSERT INTO t_historybd VALUES (NULL, '$unitname','$status', '$detail', current_timestamp())");
-    $updatedata = mysqli_query($connection, "UPDATE t_unit SET status = '$status' WHERE t_unit.unit_name = '$unitname'");
+    $insertdata = $connection->query("INSERT INTO t_historybd (his_unit_name, his_type, his_detail, his_updated_at) VALUES ('$unitname','$status', '$detail', getDate())");
+    $updatedata = $connection->query("UPDATE t_unit SET status = '$status' WHERE t_unit.unit_name = '$unitname'");
     if($insertdata){
         header('Location: ../pages/admin.php?statusinput=bdsuccess');
     } else {
@@ -67,8 +67,8 @@ if(isset($_POST['submitdatabdcoal'])){
     $status = $_POST['type'];
     $detail = $_POST['detailstatus'];
     // query tambah data 
-    $insertdata = mysqli_query($connection, "INSERT INTO t_historybd VALUES (NULL, '$unitname','$status', '$detail', current_timestamp())");
-    $updatedata = mysqli_query($connection, "UPDATE t_unit SET status = '$status' WHERE t_unit.unit_name = '$unitname'");
+    $insertdata = $connection->query("INSERT INTO t_historybd (his_unit_name, his_type, his_detail, his_updated_at) VALUES ('$unitname','$status', '$detail', getDate())");
+    $updatedata = $connection->query("UPDATE t_unit SET status = '$status' WHERE t_unit.unit_name = '$unitname'");
     if($insertdata){
         header('Location: ../pages/admin.php?statusinput=bdcoalsuccess');
     } else {
@@ -81,7 +81,7 @@ if(isset($_POST['submitdataflow'])){
     $to = $_POST['to'];
     $flowinfo = $from." To ".$to;
     // query tambah data lokasi
-    $insertdata = mysqli_query($connection, "INSERT INTO t_flow VALUES (NULL, '$unitname','$flowinfo', current_timestamp())");
+    $insertdata = $connection->query("INSERT INTO t_flow (fl_unit_name, fl_info, fl_updated_at) VALUES ('$unitname','$flowinfo', getDate())");
     if($insertdata){
         header('Location: ../pages/admin.php?statusinput=flowsuccess');
     } else {
@@ -92,9 +92,9 @@ if(isset($_POST['submitdataflowcoal'])){
     $unitname = $_POST['unitname'];
     $from = $_POST['from'];
     $to = $_POST['to'];
-    $flowinfo = $from." To ".$to;
+    $flowinfo = $from." - ".$to;
     // query tambah data lokasi
-    $insertdata = mysqli_query($connection, "INSERT INTO t_flow VALUES (NULL, '$unitname','$flowinfo', current_timestamp())");
+    $insertdata = $connection->query("INSERT INTO t_flow (fl_unit_name, fl_info, fl_updated_at) VALUES ('$unitname','$flowinfo', getDate())");
     if($insertdata){
         header('Location: ../pages/admin.php?statusinput=flowsuccesscoal');
     } else {

@@ -30,8 +30,9 @@ if(isset($_POST['submitdatacoal'])){
 if(isset($_POST['submitdatafleet'])){
     $unitname = $_POST['unitname'];
     $totalfleet = $_POST['totalhauler'];
+    $haulertype = $_POST['jenishauler'];
     // query tambah data 
-    $insertdata = $connection->query("INSERT INTO t_fleet (fleet_unit, fleet_hauler, fleet_updated_at) VALUES ('$unitname','$totalfleet',getDate())");
+    $insertdata = $connection->query("INSERT INTO t_fleet (fleet_unit, fleet_hauler, fleet_updated_at, fleet_hauler_type) VALUES ('$unitname','$totalfleet',getDate(), '$haulertype')");
     if($insertdata){
         header('Location: ../pages/admin.php?statusinput=fleetsuccess');
     } else {
@@ -41,8 +42,9 @@ if(isset($_POST['submitdatafleet'])){
 if(isset($_POST['submitdatafleetcoal'])){
     $unitname = $_POST['unitname'];
     $totalfleet = $_POST['totalhauler'];
+    $haulertype = $_POST['jenishauler'];
     // query tambah data 
-    $insertdata = $connection->query( "INSERT INTO t_fleet (fleet_unit, fleet_hauler, fleet_updated_at) VALUES ('$unitname','$totalfleet',getDate())");
+    $insertdata = $connection->query( "INSERT INTO t_fleet (fleet_unit, fleet_hauler, fleet_updated_at, fleet_hauler_type) VALUES ('$unitname','$totalfleet',getDate(), '$haulertype')");
     if($insertdata){
         header('Location: ../pages/admin.php?statusinput=fleetcoalsuccess');
     } else {

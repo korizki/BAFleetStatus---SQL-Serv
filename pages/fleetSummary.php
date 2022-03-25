@@ -7,8 +7,9 @@
     <title>Bukit Asam - Fleet's Availability Summary</title>
     <link rel="stylesheet" href="../assets/styles/index.css" />
     <link rel="stylesheet" href="../assets/styles/responsive.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
     <link rel="icon" href="../assets/logo/icon.svg" />
+    <script defer src="../assets/styles/all.min.js"></script>
 </head>
 <body>
     <?php include "../codes/connection.php"; ?>
@@ -22,8 +23,8 @@
         <?php include "pit2Equipment.php" ?>
         <?php include "pit3Equipment.php" ?>
     </main>
-    <footer>
-        <p>Copyright &copy; 2022  PT. Bukit Asam (Persero) Tbk.</p>
+    <footer style="margin-top: 0">
+        <p>Copyright &copy; 2022  PT. Bukit Asam (Persero) Tbk. | Icon by Font Awesome | Illustration by Storyset.com</p>
     </footer>
 </body>
 </html>

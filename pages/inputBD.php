@@ -32,7 +32,7 @@
                     };
                 } 
             ?>
-            
+            <i class="fa fa-lg fa-times-circle" onclick="closeformbdob()" style="cursor: pointer"></i>
         </div>
         <form action="../codes/handleSubmitLocation.php" method="post" autocomplete="off" style="justify-content: center">
             <label for="unitname">Unit Name</label>
@@ -59,9 +59,6 @@
             <input type="text" id="detailstatus" name="detailstatus" >
             <button type="submit" name="submitdatabd"><i class="fa fa-paper-plane" style="margin-inline-end: 8px" ></i>Submit Data</button>
         </form>
-        <div style="display: flex; justify-content: flex-end">
-            <button class="cancelbtnform" onclick = "closeformbdob()">Back / Cancel</button>
-        </div>
     </div>
 </div>
 <div class="outerform" id="updatebdcoal">
@@ -98,7 +95,7 @@
                     };
                 } 
             ?>
-            
+            <i class="fa fa-lg fa-times-circle" onclick="closeformbdcoal()" style="cursor: pointer"></i>
         </div>
         <form action="../codes/handleSubmitLocation.php" method="post" autocomplete="off" style="justify-content: center">
             <label for="unitname">Unit Name</label>
@@ -126,8 +123,5 @@
             <input type="text" id="detailstatus" name="detailstatus" >
             <button type="submit" name="submitdatabdcoal"><i class="fa fa-paper-plane" style="margin-inline-end: 8px" ></i>Submit Data</button>
         </form>
-        <div style="display: flex; justify-content: flex-end">
-            <button class="cancelbtnform" onclick = "closeformbdcoal()">Back / Cancel</button>
-        </div>
     </div>
 </div>

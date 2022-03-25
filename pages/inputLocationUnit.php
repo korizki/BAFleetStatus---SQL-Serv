@@ -32,6 +32,7 @@
                     };
                 } 
             ?>
+            <i class="fa fa-lg fa-times-circle" onclick="closeform()" style="cursor: pointer"></i>
             
         </div>
         <form action="../codes/handleSubmitLocation.php" autocomplete="off" method="post">
@@ -64,9 +65,6 @@
             </select>
             <button type="submit" name="submitdata"><i class="fa fa-paper-plane" style="margin-inline-end: 8px" ></i>Submit Data</button>
         </form>
-        <div style="display: flex; justify-content: flex-end">
-            <button class="cancelbtnform" onclick = "closeform()">Back / Cancel</button>
-        </div>
     </div>
 </div>
 <div class="outerform" id="updatelocationcoal">
@@ -103,6 +101,7 @@
                     };
                 } 
             ?>
+            <i class="fa fa-lg fa-times-circle" onclick="closeformcoal()" style="cursor: pointer"></i>
         </div>
         <form action="../codes/handleSubmitLocation.php" autocomplete="off" method="post">
             <label for="unitname">Unit Name</label>
@@ -125,15 +124,12 @@
                 <option value="Workshop">Workshop</option>
             </select>
             <label for="loadertype">Tipe Loader</label>
-            <select name="loadertype" id="loadertype" style="width: 150px;">
+            <select name="loadertype" id="loadertype" style="width: 150px;" required>
                 <option value="" selected disabled>-- Type Loader --</option>
                 <option value="Excavator Coal">Excavator Coal</option>
                 <option value="Excavator Tanah">Excavator Tanah</option>
             </select>
             <button type="submit" name="submitdatacoal"><i class="fa fa-paper-plane" style="margin-inline-end: 8px" ></i>Submit Data</button>
         </form>
-        <div style="display: flex; justify-content: flex-end">
-            <button class="cancelbtnform" onclick="closeformcoal()">Back / Cancel</button>
-        </div>
     </div>
 </div>

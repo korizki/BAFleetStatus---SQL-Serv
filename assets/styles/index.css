@@ -99,6 +99,9 @@ main{
     margin-bottom: 10px;
     flex: 1;
 }
+.shovelsummary>div p{
+    cursor: pointer;
+}
 .setUnit{
     font-size: 0.9rem;
     line-height: 1.5;

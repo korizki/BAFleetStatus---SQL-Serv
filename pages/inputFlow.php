@@ -32,7 +32,7 @@
                     };
                 } 
             ?>
-            
+            <i class="fa fa-lg fa-times-circle" onclick="closeforminputflow()" style="cursor: pointer"></i>
         </div>
         <form action="../codes/handleSubmitLocation.php" method="post" autocomplete="off" style="justify-content: center">
             <label for="unitname">Unit Name</label>
@@ -73,9 +73,6 @@
             </datalist>
             <button type="submit" name="submitdataflow"><i class="fa fa-paper-plane" style="margin-inline-end: 8px" ></i>Submit Data</button>
         </form>
-        <div style="display: flex; justify-content: flex-end">
-            <button class="cancelbtnform" onclick = "closeforminputflow()">Back / Cancel</button>
-        </div>
     </div>
 </div>
 <div class="outerform" id="updateflowcoal">
@@ -112,7 +109,7 @@
                     };
                 } 
             ?>
-            
+            <i class="fa fa-lg fa-times-circle" onclick="closeforminputflowcoal()" style="cursor: pointer"></i>
         </div>
         <form action="../codes/handleSubmitLocation.php" method="post" autocomplete="off" style="justify-content: center">
             <label for="unitname">Unit Name</label>
@@ -154,8 +151,5 @@
             </datalist>
             <button type="submit" name="submitdataflowcoal"><i class="fa fa-paper-plane" style="margin-inline-end: 8px" ></i>Submit Data</button>
         </form>
-        <div style="display: flex; justify-content: flex-end">
-            <button class="cancelbtnform" onclick = "closeforminputflowcoal()">Back / Cancel</button>
-        </div>
     </div>
 </div>

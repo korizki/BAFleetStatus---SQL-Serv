@@ -10,24 +10,24 @@
             <div class="shovelsummary">
                 <div>
                     <h3>Ready</h3>
-                    <p>Shovel : <span> <?php echo $readypit2->fetchColumn()?> Unit<span></p>
-                    <p>PC | PPA : <span><?php echo countUnit('PIT 2', 'PC 1250', 'Ready')->fetchColumn()?> Unit</span></p>
-                    <p>Belaz : <span><?php echo countUnit('PIT 2', 'Belaz', 'Ready')->fetchColumn()?> Unit</span></p>
-                    <p>HD | PPA : <span><?php echo countUnit('PIT 2', 'HD PPA', 'Ready')->fetchColumn()?> Unit</span></p>
+                    <p >Shovel : <span> <?php echo $readypit2->fetchColumn()?> Unit<span></p>
+                    <p >PC | PPA : <span><?php echo countUnit('PIT 2', 'PC 1250', 'Ready')->fetchColumn()?> Unit</span></p>
+                    <p title ="<?php echo PrintUnit($belazready2) ?>">Belaz : <span><?php echo countUnit('PIT 2', 'Belaz', 'Ready')->fetchColumn()?> Unit</span></p>
+                    <p title ="<?php echo PrintUnit($hdready2) ?>">HD | PPA : <span><?php echo countUnit('PIT 2', 'HD PPA', 'Ready')->fetchColumn()?> Unit</span></p>
                 </div>
                 <div>
                     <h3>Breakdown</h3>
-                    <p>Shovel : <span><?php echo $breakdownpit2->fetchColumn()?> Unit</span></p>
-                    <p>PC | PPA : <span><?php echo countUnit('PIT 2', 'PC 1250', 'Breakdown')->fetchColumn()?> Unit</span></p>
-                    <p>Belaz : <span><?php echo countUnit('PIT 2', 'Belaz', 'Breakdown')->fetchColumn()?> Unit</span></p>
-                    <p>HD | PPA : <span><?php echo countUnit('PIT 2', 'HD PPA', 'Breakdown')->fetchColumn()?> Unit</span></p>
+                    <p >Shovel : <span><?php echo $breakdownpit2->fetchColumn()?> Unit</span></p>
+                    <p >PC | PPA : <span><?php echo countUnit('PIT 2', 'PC 1250', 'Breakdown')->fetchColumn()?> Unit</span></p>
+                    <p title ="<?php echo PrintUnit($belazbd2) ?>">Belaz : <span><?php echo countUnit('PIT 2', 'Belaz', 'Breakdown')->fetchColumn()?> Unit</span></p>
+                    <p title ="<?php echo PrintUnit($hdbd2) ?>">HD | PPA : <span><?php echo countUnit('PIT 2', 'HD PPA', 'Breakdown')->fetchColumn()?> Unit</span></p>
                 </div>
                 <div>
                     <h3>Standby</h3>
-                    <p>Shovel : <span><?php echo $standbypit2->fetchColumn()?> Unit</span></p>
-                    <p>PC | PPA : <span><?php echo countUnit('PIT 2', 'PC 1250', 'Standby')->fetchColumn()?> Unit</span></p>
-                    <p>Belaz : <span><?php echo countUnit('PIT 2', 'Belaz', 'Standby')->fetchColumn()?> Unit</span></p>
-                    <p>HD | PPA : <span><?php echo countUnit('PIT 2', 'HD PPA', 'Standby')->fetchColumn()?> Unit</span></p>
+                    <p >Shovel : <span><?php echo $standbypit2->fetchColumn()?> Unit</span></p>
+                    <p >PC | PPA : <span><?php echo countUnit('PIT 2', 'PC 1250', 'Standby')->fetchColumn()?> Unit</span></p>
+                    <p title ="<?php echo PrintUnit($belazst2) ?>">Belaz : <span><?php echo countUnit('PIT 2', 'Belaz', 'Standby')->fetchColumn()?> Unit</span></p>
+                    <p title ="<?php echo PrintUnit($hdst2) ?>">HD | PPA : <span><?php echo countUnit('PIT 2', 'HD PPA', 'Standby')->fetchColumn()?> Unit</span></p>
                 </div>
             </div>
             <?php 
@@ -38,8 +38,8 @@
                             <img src="../assets/logo/exca.svg" alt="shovelicon" style="margin-inline-start: 5px;"/>
                             <h4 id="shovelName" class="shovelstatus <?php echo getStatus($rowshovel['unit_name'])->fetch(PDO::FETCH_COLUMN, 0)?>" title="Unit <?php echo getStatus($rowshovel['unit_name'])->fetch(PDO::FETCH_COLUMN, 0)?> | <?php echo getDetail($rowshovel['unit_name'])->fetch(PDO::FETCH_COLUMN, 0) ?> "><?php echo $rowshovel['unit_name'] ?></h4>
                             <div class="setUnit">
-                                <p style="width: 100px; text-align:center"><?php echo getFleet($rowshovel['unit_name'])->fetchColumn(2)?> Belaz</p>
-                                <p style="width: 100px">- HD PPA</p>
+                                <p style="width: 100px; text-align:center"><?php echo (getFleet($rowshovel['unit_name'], 'Belaz')->fetchColumn(2) == 0)? "" : getFleet($rowshovel['unit_name'], 'Belaz')->fetchColumn(2)." Belaz"; ?> </p>
+                                <p style="width: 100px"><?php echo (getFleet($rowshovel['unit_name'], 'HD PPA')->fetchColumn(2) == 0) ? "" : getFleet($rowshovel['unit_name'], 'HD PPA')->fetchColumn(2)." HD PPA"; ?></p>
                             </div>
                             <p style="width: 240px; text-align:center"><?php echo getflow($rowshovel['unit_name'])->fetchColumn(2);?></p>
                         </div>
@@ -55,22 +55,22 @@
                     <h3>Ready</h3>
                     <p>Shovel : <span><?php echo $readypit3->fetchColumn()?> Unit</span></p>
                     <p>PC | PPA : <span><?php echo countUnit('PIT 3', 'PC 1250', 'Ready')->fetchColumn()?> Unit</span></p>
-                    <p>Belaz : <span><?php echo countUnit('PIT 3', 'Belaz', 'Ready')->fetchColumn()?> Unit</span></p>
-                    <p>HD | PPA : <span><?php echo countUnit('PIT 3', 'HD PPA', 'Ready')->fetchColumn()?> Unit</span></p>
+                    <p title ="<?php echo PrintUnit($belazready3) ?>">Belaz : <span><?php echo countUnit('PIT 3', 'Belaz', 'Ready')->fetchColumn()?> Unit</span></p>
+                    <p title ="<?php echo PrintUnit($hdready3) ?>">HD | PPA : <span><?php echo countUnit('PIT 3', 'HD PPA', 'Ready')->fetchColumn()?> Unit</span></p>
                 </div>
                 <div>
                     <h3>Breakdown</h3>
                     <p>Shovel : <span><?php echo $breakdownpit3->fetchColumn()?> Unit</span></p>
                     <p>PC | PPA : <span><?php echo countUnit('PIT 3', 'PC 1250', 'Breakdown')->fetchColumn()?> Unit</span></p>
-                    <p>Belaz : <span><?php echo countUnit('PIT 3', 'Belaz', 'Breakdown')->fetchColumn()?> Unit</span></p>
-                    <p>HD | PPA : <span><?php echo countUnit('PIT 3', 'HD PPA', 'Breakdown')->fetchColumn()?> Unit</span></p>
+                    <p title ="<?php echo PrintUnit($belazbd3) ?>">Belaz : <span><?php echo countUnit('PIT 3', 'Belaz', 'Breakdown')->fetchColumn()?> Unit</span></p>
+                    <p title ="<?php echo PrintUnit($hdbd3) ?>">HD | PPA : <span><?php echo countUnit('PIT 3', 'HD PPA', 'Breakdown')->fetchColumn()?> Unit</span></p>
                 </div>
                 <div>
                     <h3>Standby</h3>
                     <p>Shovel : <span><?php echo $standbypit3->fetchColumn()?> Unit</span></p>
                     <p>PC | PPA : <span><?php echo countUnit('PIT 3', 'PC 1250', 'Standby')->fetchColumn()?> Unit</span></p>
-                    <p>Belaz : <span><?php echo countUnit('PIT 3', 'Belaz', 'Standby')->fetchColumn()?> Unit</span></p>
-                    <p>HD | PPA : <span><?php echo countUnit('PIT 3', 'HD PPA', 'Standby')->fetchColumn()?> Unit</span></p>
+                    <p title ="<?php echo PrintUnit($belazst3) ?>">Belaz : <span><?php echo countUnit('PIT 3', 'Belaz', 'Standby')->fetchColumn()?> Unit</span></p>
+                    <p title ="<?php echo PrintUnit($hdst3) ?>">HD | PPA : <span><?php echo countUnit('PIT 3', 'HD PPA', 'Standby')->fetchColumn()?> Unit</span></p>
                 </div>
             </div>
             <?php 
@@ -81,8 +81,8 @@
                             <img src="../assets/logo/exca.svg" alt="shovelicon" style="margin-inline-start: 5px;"/>
                             <h4 id="shovelName" class="shovelstatus <?php echo getStatus($rowshovel['unit_name'])->fetch(PDO::FETCH_COLUMN,0)?>" title="Unit <?php echo getStatus($rowshovel['unit_name'])->fetch(PDO::FETCH_COLUMN,0);?> | <?php echo getDetail($rowshovel['unit_name'])->fetch(PDO::FETCH_COLUMN,0)?>"><?php echo $rowshovel['unit_name'] ?></h4>
                             <div class="setUnit">
-                                <p style="width: 100px;"><?php echo getFleet($rowshovel['unit_name'])->fetchColumn(2);?> Belaz</p>
-                                <p style="width: 100px;"> - HD PPA</p>
+                                <p style="width: 100px; text-align:center"><?php echo (getFleet($rowshovel['unit_name'], 'Belaz')->fetchColumn(2) == 0)? "" : getFleet($rowshovel['unit_name'], 'Belaz')->fetchColumn(2)." Belaz"; ?> </p>
+                                <p style="width: 100px"><?php echo (getFleet($rowshovel['unit_name'], 'HD PPA')->fetchColumn(2) == 0) ? "" : getFleet($rowshovel['unit_name'], 'HD PPA')->fetchColumn(2)." HD PPA"; ?></p>
                             </div>
                             <p><?php echo getflow($rowshovel['unit_name'])->fetchColumn(2);?></p>
                         </div>

@@ -32,11 +32,11 @@
                     };
                 } 
             ?>
-            
+            <i class="fa fa-lg fa-times-circle" onclick="closeformfleetob()" style="cursor: pointer"></i>
         </div>
         <form action="../codes/handleSubmitLocation.php" method="post" autocomplete="off" style="justify-content: center">
             <label for="unitname">Unit Name</label>
-            <input list="listloader" name="unitname" id="unitname" >
+            <input list="listloader" name="unitname" id="unitname" style="width: 150px">
             <datalist id="listloader">
                 <?php 
                     $sqlunit = $connection->query("SELECT * FROM t_unit WHERE unit_type IN ('Shovel PC-3000','PC 1250') ORDER BY unit_name");
@@ -49,11 +49,19 @@
             </datalist>
             <label for="totalhauler">Total Hauler</label>
             <input type="number" name="totalhauler" id="totalhauler" style="width: 100px">
+            <label for="jenishauler">Jenis Hauler</label>
+            <input list="jenishaulers" name="jenishauler" id="jenishauler" style="width: 150px">
+            <datalist id="jenishaulers">
+                <option value="Belaz">Belaz</option>
+                <option value="HD PPA">HD PPA</option>
+                <option value="Hino">Hino</option>
+                <option value="Kamaz">Kamaz</option>
+                <option value="Power Plus">Power Plus</option>
+                <option value="SKT">SKT</option>
+                <option value="Sany">Sany</option>
+            </datalist>
             <button type="submit" name="submitdatafleet"><i class="fa fa-paper-plane" style="margin-inline-end: 8px" ></i>Submit Data</button>
         </form>
-        <div style="display: flex; justify-content: flex-end">
-            <button class="cancelbtnform" onclick = "closeformfleetob()">Back / Cancel</button>
-        </div>
     </div>
 </div>
 <div class="outerform" id="updatesettingfleetcoal">
@@ -90,11 +98,11 @@
                     };
                 } 
             ?>
-            
+            <i class="fa fa-lg fa-times-circle" onclick="closeformfleetcoal()" style="cursor: pointer"></i>
         </div>
         <form action="../codes/handleSubmitLocation.php" autocomplete="off" method="post" style="justify-content: center">
             <label for="unitname">Unit Name</label>
-            <input list="listloadcoal" name="unitname" id="unitname">
+            <input list="listloadcoal" name="unitname" id="unitname" style="width: 150px">
             <datalist id="listloadcoal">
                 <?php 
                     $sqlunit = $connection->query("SELECT * FROM t_unit WHERE unit_type IN ('Excavator','Excavator Tanah','Excavator Coal') ORDER BY unit_name");
@@ -107,10 +115,18 @@
             </datalist>
             <label for="totalhauler">Total Hauler</label>
             <input type="number" name="totalhauler" id="totalhauler" style="width: 100px">
+            <label for="jenishauler">Jenis Hauler</label>
+            <input list="jenishaulers" name="jenishauler" id="jenishauler" style="width: 150px">
+            <datalist id="jenishaulers">
+                <option value="Belaz">Belaz</option>
+                <option value="HD PPA">HD PPA</option>
+                <option value="Hino">Hino</option>
+                <option value="Kamaz">Kamaz</option>
+                <option value="Power Plus">Power Plus</option>
+                <option value="SKT">SKT</option>
+                <option value="Sany">Sany</option>
+            </datalist>
             <button type="submit" name="submitdatafleetcoal"><i class="fa fa-paper-plane" style="margin-inline-end: 8px" ></i>Submit Data</button>
         </form>
-        <div style="display: flex; justify-content: flex-end">
-            <button class="cancelbtnform" onclick = "closeformfleetcoal()">Back / Cancel</button>
-        </div>
     </div>
 </div>

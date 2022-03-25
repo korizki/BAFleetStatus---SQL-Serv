@@ -29,7 +29,7 @@
                         <div class="boxdetailshovel coalsummary" style=" justify-content: space-around">
                             <img src="../assets/logo/excacoal.svg" alt="shovelicon" style="margin-inline-start: 5px;"/>
                             <h4 id="shovelName" class="shovelstatus <?php echo getStatus($rowshovel['unit_name'])->fetch(PDO::FETCH_COLUMN, 0) ?>" title="Unit <?php echo getStatus($rowshovel['unit_name'])->fetch(PDO::FETCH_COLUMN, 0)?> | <?php echo getDetail($rowshovel['unit_name'])->fetch(PDO::FETCH_COLUMN, 0) ?>"><?php echo $rowshovel['unit_name'] ?></h4>
-                            <p style="width: 100px; text-align:center"><?php echo getFleet($rowshovel['unit_name'])->fetchColumn(2) ?> Unit</p>
+                            <p style="width: 100px; text-align:center"><?php echo getFleet($rowshovel['unit_name'], 'Kamaz')->fetchColumn(2) ?> Unit</p>
                             <p style="width: 190px; text-align:center"><?php echo getflow($rowshovel['unit_name'])->fetchColumn(2)?></p>
                         </div>
                     <?php
@@ -65,7 +65,7 @@
                         <div class="boxdetailshovel coalsummary" style=" justify-content: space-around">
                             <img src="../assets/logo/excacoal.svg" alt="shovelicon" style="margin-inline-start: 5px;"/>
                             <h4 id="shovelName" class="shovelstatus <?php echo getStatus($rowshovel['unit_name'])->fetch(PDO::FETCH_COLUMN, 0) ?>" title="Unit <?php echo getStatus($rowshovel['unit_name'])->fetch(PDO::FETCH_COLUMN, 0)?> | <?php echo getDetail($rowshovel['unit_name'])->fetch(PDO::FETCH_COLUMN, 0) ?>"><?php echo $rowshovel['unit_name'] ?></h4>
-                            <p style="width: 100px; text-align:center"><?php echo getFleet($rowshovel['unit_name'])->fetchColumn(2) ?> Unit</p>
+                            <p style="width: 100px; text-align:center"><?php echo getFleet($rowshovel['unit_name'], ' Kamaz')->fetchColumn(2) ?> Unit</p>
                             <p style="width: 190px; text-align:center"><?php echo getflow($rowshovel['unit_name'])->fetchColumn(2)?></p>
                         </div>
                     <?php
@@ -103,8 +103,8 @@
                         <div class="boxdetailshovel coalsummary" style="justify-content: space-around">
                             <img src="../assets/logo/excacoal.svg" alt="shovelicon" style="margin-inline-start: 10px;"/>
                             <h4 id="shovelName" class="shovelstatus <?php echo getStatus($rowshovel['unit_name'])->fetch(PDO::FETCH_COLUMN, 0);?>" title="Unit <?php echo getStatus($rowshovel['unit_name'])->fetch(PDO::FETCH_COLUMN, 0);?> | <?php echo getDetail($rowshovel['unit_name'])->fetch(PDO::FETCH_COLUMN, 0)?>"><?php echo $rowshovel['unit_name'] ?></h4>
-                            <p style="width: 100px; text-align:center "><?php echo getFleet($rowshovel['unit_name'])->fetchColumn(2);?> Unit</p>
-                            <p style="width: 170px; text-align:center"><?php echo getflow($rowshovel['unit_name'])->fetchColumn(2);?></p>
+                            <p style="width: 100px; text-align:center "><?php echo getFleet($rowshovel['unit_name'], ' Kamaz')->fetchColumn(2);?> Unit</p>
+                            <p style="width: 170px; text-align:center"><?php echo getflow($rowshovel['unit_name'] )->fetchColumn(2);?></p>
                         </div>
                     <?php
                 }
@@ -137,7 +137,7 @@
                         <div class="boxdetailshovel coalsummary" style="justify-content: space-around">
                             <img src="../assets/logo/excacoal.svg" alt="shovelicon" style="margin-inline-start: 10px;"/>
                             <h4 id="shovelName" class="shovelstatus <?php echo getStatus($rowshovel['unit_name'])->fetch(PDO::FETCH_COLUMN, 0);?>" title="Unit <?php echo getStatus($rowshovel['unit_name'])->fetch (PDO::FETCH_COLUMN, 0);?> | <?php echo getDetail($rowshovel['unit_name'])->fetch (PDO::FETCH_COLUMN, 0)?>"><?php echo $rowshovel['unit_name'] ?></h4>
-                            <p style="width: 100px; text-align:center"><?php echo getFleet($rowshovel['unit_name'])->fetchColumn(2);?> Unit</p>
+                            <p style="width: 100px; text-align:center"><?php echo getFleet($rowshovel['unit_name'], ' Kamaz')->fetchColumn(2);?> Unit</p>
                             <p style="width: 170px; text-align:center"><?php echo getflow($rowshovel['unit_name'])->fetchColumn(2);?></p>
                         </div>
                     <?php

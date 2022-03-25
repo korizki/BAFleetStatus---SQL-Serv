@@ -79,6 +79,10 @@
         flex: none;
         width: 100%;
         padding: 30px;
+        padding-top: 0;
+    }
+    .loginform>figure>img {
+        width: 250px;
     }
     /* halaman Summary Breakdown */
     header>.judul{

@@ -30,6 +30,11 @@
                     <p title ="<?php echo PrintUnit($hdst2) ?>">HD | PPA : <span><?php echo countUnit('PIT 2', 'HD PPA', 'Standby')->fetchColumn()?> Unit</span></p>
                 </div>
             </div>
+            <div class="datainfo">
+                <p>Loader Name</p>
+                <p>Fleet Setting</p>
+                <p>Flow Info</p>
+            </div>
             <?php 
                 $queryshovel = $connection->query("SELECT DISTINCT(unit_name) FROM t_unit WHERE area = 'PIT 2' AND unit_type IN ('Shovel PC-3000', 'PC 1250') AND status IN('Ready','Breakdown','Standby','General') ORDER BY unit_name ASC");
                 while($rowshovel = $queryshovel->fetch(PDO::FETCH_ASSOC)){
@@ -72,6 +77,11 @@
                     <p title ="<?php echo PrintUnit($belazst3) ?>">Belaz : <span><?php echo countUnit('PIT 3', 'Belaz', 'Standby')->fetchColumn()?> Unit</span></p>
                     <p title ="<?php echo PrintUnit($hdst3) ?>">HD | PPA : <span><?php echo countUnit('PIT 3', 'HD PPA', 'Standby')->fetchColumn()?> Unit</span></p>
                 </div>
+            </div>
+            <div class="datainfo">
+                <p>Loader Name</p>
+                <p>Fleet Setting</p>
+                <p>Flow Info</p>
             </div>
             <?php 
                 $queryshovel = $connection->query("SELECT DISTINCT(unit_name) FROM t_unit WHERE area = 'PIT 3' AND unit_type IN ('Shovel PC-3000','PC 1250') AND status IN('Ready','Breakdown','Standby','General') ORDER BY unit_name DESC" );

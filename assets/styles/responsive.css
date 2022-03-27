@@ -11,9 +11,9 @@
         text-align: center;
     }
     .brandptba{
-        width: 90px;
+        width: 140px;
         top: 15px;
-        left: 15px;
+        left: 30px;
     }
     figcaption{
         padding-block-start: 0px;
@@ -87,7 +87,7 @@
     /* halaman Summary Breakdown */
     header>.judul{
         font-size: 1.5rem;
-        margin-block-start: 30px;       
+        margin-block-start: 50px;       
         background-size: auto; 
     }
     main{

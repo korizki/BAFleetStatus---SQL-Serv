@@ -12,10 +12,10 @@
                     <tr>
                         <th>No. </th>
                         <th>Nama Loader</th>
-                        <th>Tipe Loader</th>
+                        <th class="mobilehide">Tipe Loader</th>
                         <th>Jumlah Hauler</th>
                         <th>Tipe Hauler</th>
-                        <th>Lokasi</th>
+                        <th class="mobilehide">Lokasi</th>
                         <th>Update Terakhir</th>
                     </tr>
                 </thead>
@@ -29,10 +29,10 @@
                             <tr>
                                 <td><?php echo $no++ ?></td>
                                 <td><?php echo $row['fleet_unit'] ?></td>
-                                <td><?php echo $row['unit_type'] ?></td>
+                                <td class="mobilehide"><?php echo $row['unit_type'] ?></td>
                                 <td><?php echo $row['fleet_hauler'] ?></td>
                                 <td><?php echo $row['fleet_hauler_type'] ?></td>
-                                <td><?php echo $row['area'] ?></td>
+                                <td class="mobilehide"><?php echo $row['area'] ?></td>
                                 <td><?php echo $row['fleet_updated_at'] ?></td>
                             </tr> 
                             <?php
@@ -55,10 +55,10 @@
                     <tr>
                         <th>No. </th>
                         <th>Nama Loader</th>
-                        <th>Tipe Loader</th>
+                        <th class="mobilehide">Tipe Loader</th>
                         <th>Jumlah Hauler</th>
                         <th>Tipe Hauler</th>
-                        <th>Lokasi</th>
+                        <th class="mobilehide">Lokasi</th>
                         <th>Update Terakhir</th>
                     </tr>
                 </thead>
@@ -72,10 +72,10 @@
                             <tr>
                                 <td><?php echo $no++ ?></td>
                                 <td><?php echo $row['fleet_unit'] ?></td>
-                                <td><?php echo $row['unit_type'] ?></td>
+                                <td class="mobilehide"><?php echo $row['unit_type'] ?></td>
                                 <td><?php echo $row['fleet_hauler'] ?></td>
                                 <td><?php echo $row['fleet_hauler_type'] ?></td>
-                                <td><?php echo $row['area'] ?></td>
+                                <td class="mobilehide"><?php echo $row['area'] ?></td>
                                 <td><?php echo $row['fleet_updated_at'] ?></td>
                             </tr> 
                             <?php

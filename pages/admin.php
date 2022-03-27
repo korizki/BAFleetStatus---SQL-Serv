@@ -12,10 +12,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bukit Asam - Admin Page</title>
     <link rel="stylesheet" href="../assets/styles/index.css" />
-    <link rel="stylesheet" href="../assets/styles/responsive.css" />
     <link rel="stylesheet" href="../assets/styles/admin.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../assets/styles/responsive.css" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
     <link rel="icon" href="../assets/logo/icon.svg" />
+    <script defer src="../assets/styles/all.min.js"></script>
     <script defer src="../assets/script.js"></script>
 </head>
 <body style="background: rgba(228, 228, 228, 0.200);">
@@ -27,6 +28,7 @@
     
     <header class="navbar">
         <img src="../assets/logo/logoptba.png" alt="navbarimage">
+        <a href="#" class="mobile" onclick=showmenu()><i class="fa fa-bars "></i></a>
         <div class="side-info">
             <span><i class="fa fa-lg fa-user-circle" style="margin-inline-end: 6px"></i>Welcome, <?php echo $_SESSION['username']?></span>
             <span><a href="../codes/logout.php"><i class="fa fa-lg fa-sign-out-alt" style="margin-inline-end: 6px"></i>Log Out</a></span>
@@ -37,10 +39,10 @@
             <aside>
                 <p><i class="fa fa-lg fa-bars" style="margin-inline-end: 15px"></i><a href="admin.php">All Menu</a></p>
                 <div class="sidemenu">
-                    <a href="?content=location"><i class="fa fa-edit" style="margin-inline-end: 15px"></i>Lokasi Unit</a>
-                    <a href="?content=fleet"><i class="fa fa-traffic-light" style="margin-inline-end: 15px"></i>Setting Fleet</a>
-                    <a href="?content=status"><i class="fa fa-exclamation-triangle" style="margin-inline-end: 15px"></i>Status Unit</a>
-                    <a href="?content=flow"><i class="fa fa-route" style="margin-inline-end: 15px"></i>Flow Unit</a>
+                    <a href="?content=location"><i class="fa fa-edit" style="margin-inline-end: 15px"></i><span>Lokasi Unit</span></a>
+                    <a href="?content=fleet"><i class="fa fa-traffic-light" style="margin-inline-end: 15px"></i><span>Setting Fleet</span></a>
+                    <a href="?content=status"><i class="fa fa-exclamation-triangle" style="margin-inline-end: 15px"></i><span>Status Unit</span></a>
+                    <a href="?content=flow"><i class="fa fa-route" style="margin-inline-end: 15px"></i><span>Flow Unit</span></a>
                 </div>
             </aside>
             <div class="maincontent">
@@ -71,5 +73,18 @@
             </div>
         </div>
     </div>
+    <script>
+        var condition = 0;
+        function showmenu(){
+            const side = document.querySelector('.side-info');
+            if(condition  == 0){
+                side.style.transform = "translateY(0px)";
+                condition = 1;
+            } else {
+                side.style.transform = "translateY(-300px)";
+                condition = 0;
+            }
+        }
+    </script>
 </body>
 </html>

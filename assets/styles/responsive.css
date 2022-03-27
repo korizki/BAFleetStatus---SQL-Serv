@@ -1,6 +1,17 @@
 @media screen and (max-width: 425px){
-    .headerhome{
+    .mobile{
+        display: block;
+    }
+    a.mobile{
         padding: 10px;
+    }
+    a.mobile:focus{
+        border: none;
+        box-shadow: none;
+        outline: none;
+    }
+    .headerhome{
+        padding: 0px 10px;
 
     }
     .judulapt{
@@ -9,6 +20,9 @@
     .setUnit{
         font-size: 0.7rem;
         text-align: center;
+    }
+    .setUnit>p{
+        width: 55px !important;
     }
     .brandptba{
         width: 140px;
@@ -98,10 +112,13 @@
         flex-direction: column;
     }
     .boxlocation>h3{
-        padding: 10px 0;
+        padding: 10px 20px;
         font-size: 1rem;
+        line-height: 1.6;
+        position: sticky;
+        top: 5px;
+        z-index: 10;
     }
- 
     .boxShovel{
         padding: 10px;
         margin-bottom: 30px;
@@ -116,6 +133,10 @@
         padding: 10px;
         width: 150px;
         text-align: center;
+    }
+    .datainfo{
+        font-size: 0.8rem;
+        padding: 10px 30px;
     }
     .shovelsummary>div{
         padding: 10px;
@@ -196,7 +217,113 @@
         font-size: 0.9rem;
         transform: translateY(-10px);
     }
-    
+    .navbar{
+        padding: 8px 15px;
+    }
+    .navbar>img{
+        width: 100px;
+    }
+    .side-info{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: white;
+        border: 1px solid var(--line);
+        margin-top: 54px;
+        border-radius: 5px;
+        transform: translateY(-300px);
+        transition: transform 1s ease;
+    }
+    .side-info>span{
+        text-align: left;
+        font-size: 0.8rem;
+        padding: 12px 20px;
+        margin-left: 0;
+    }
+    .side-info>span>a{
+        padding: 0px;
+        font-size: inherit;
+    }
+    .bodycontent{
+        padding: 0;
+        display: block;
+    }
+    aside{
+        width: 100%;
+        border-radius: 15px 15px 0 0;
+        position: fixed;
+        bottom: 0;
+    }
+    aside>p{
+        display: none;
+    }
+    .sidemenu{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+        
+    }
+    .sidemenu>a{
+        padding: 7px 12px;
+        color: var(--blue1);
+        font-size: 1rem;
+    }
+    .sidemenu>a:focus{
+        padding-left: 12px;
+    }
+    .sidemenu>a:active{
+        background: var(--line);
+        padding-left: 10px;
+    }
+    .sidemenu>a>span{
+        display: none;
+    }
+    .maincontent{
+        padding: 30px 15px;
+        border-top: 0;
+        border-radius: 0;
+        height: auto;
+        margin-bottom: 50px;
+        border: none;
+        box-shadow: none;
+    }
+    .bodycontent{
+        font-size: 0.7rem;
+    }
+    .boxcontents>details{
+        padding: 10px;
+    }
+    .boxcontent{
+        flex-direction: column;
+    }
+    .boxcontent>div{
+        margin:0;
+        margin-top: 20px;
+        text-align: center;
+        font-size: 0.9rem;
+    }
+    .boxcontent>img{
+        width: auto;
+    }
+    .boxcontent>div>h1{
+        font-size: 2rem;
+    }
+    .boxcontent>div>h1>span{
+        font-size: 2rem !important;
+    }
+    .maincontentsection{
+        padding-right: 0;
+        float: right;
+    }
+    .tablecontent>.tablebox>table>tbody>tr>td{
+        font-size: 0.5rem;
+        padding: 7px 5px;
+    }
+    .mobilehide{
+        display: none;
+    }
 }
 @media screen and (max-width: 375px){
     .shovelstatus{

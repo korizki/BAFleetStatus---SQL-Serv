@@ -12,7 +12,7 @@
                     <tr>
                         <th>No. </th>
                         <th>Nama Loader</th>
-                        <th>Tipe Loader</th>
+                        <th class="mobilehide">Tipe Loader</th>
                         <th>Area</th>
                         <th>Flow</th>
                         <th>Update Terakhir</th>
@@ -28,7 +28,7 @@
                             <tr>
                                 <td><?php echo $no++ ?></td>
                                 <td><?php echo $row['fl_unit_name'] ?></td>
-                                <td><?php echo $row['unit_type'] ?></td>
+                                <td class="mobilehide"><?php echo $row['unit_type'] ?></td>
                                 <td><?php echo $row['area'] ?></td>
                                 <td><?php echo $row['fl_info'] ?></td>
                                 <td><?php echo $row['fl_updated_at'] ?></td>
@@ -53,7 +53,7 @@
                     <tr>
                         <th>No. </th>
                         <th>Nama Loader</th>
-                        <th>Tipe Loader</th>
+                        <th class="mobilehide">Tipe Loader</th>
                         <th>Area</th>
                         <th>Flow</th>
                         <th>Update Terakhir</th>
@@ -69,7 +69,7 @@
                             <tr>
                                 <td><?php echo $no++ ?></td>
                                 <td><?php echo $row['fl_unit_name'] ?></td>
-                                <td><?php echo $row['unit_type'] ?></td>
+                                <td class="mobilehide"><?php echo $row['unit_type'] ?></td>
                                 <td><?php echo $row['area'] ?></td>
                                 <td><?php echo $row['fl_info'] ?></td>
                                 <td><?php echo $row['fl_updated_at'] ?></td>

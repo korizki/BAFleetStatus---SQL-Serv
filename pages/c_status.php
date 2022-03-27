@@ -12,7 +12,7 @@
                     <tr>
                         <th>No. </th>
                         <th>Nama Unit</th>
-                        <th>Lokasi</th>
+                        <th class="mobilehide">Lokasi</th>
                         <th>Status Unit</th>
                         <th>Keterangan</th>
                         <th>Update Terakhir</th>
@@ -28,7 +28,7 @@
                             <tr>
                                 <td><?php echo $no++ ?></td>
                                 <td><?php echo $row['his_unit_name'] ?></td>
-                                <td><?php echo $row['area'] ?></td>
+                                <td class="mobilehide"><?php echo $row['area'] ?></td>
                                 <td><?php echo $row['his_type'] ?></td>
                                 <td><?php echo $row['his_detail'] ?></td>
                                 <td><?php echo $row['his_updated_at'] ?></td>
@@ -53,8 +53,8 @@
                     <tr>
                         <th>No. </th>
                         <th>Nama Unit</th>
-                        <th>Jenis Unit</th>
-                        <th>Lokasi</th>
+                        <th class="mobilehide">Jenis Unit</th>
+                        <th class="mobilehide">Lokasi</th>
                         <th>Status Unit</th>
                         <th>Keterangan</th>
                         <th>Update Terakhir</th>
@@ -70,8 +70,8 @@
                             <tr>
                                 <td><?php echo $no++ ?></td>
                                 <td><?php echo $row['his_unit_name'] ?></td>
-                                <td><?php echo $row['unit_type'] ?></td>
-                                <td><?php echo $row['area'] ?></td>
+                                <td class="mobilehide"><?php echo $row['unit_type'] ?></td>
+                                <td class="mobilehide"><?php echo $row['area'] ?></td>
                                 <td><?php echo $row['his_type'] ?></td>
                                 <td><?php echo $row['his_detail'] ?></td>
                                 <td><?php echo $row['his_updated_at'] ?></td>

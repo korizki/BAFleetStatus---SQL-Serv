@@ -131,7 +131,9 @@ main{
     border-radius: 4px;
     color: white;
 }
-
+.mobile{
+    display: none;
+}
 .aptarea{
     background: white;
     border-radius: 8px;

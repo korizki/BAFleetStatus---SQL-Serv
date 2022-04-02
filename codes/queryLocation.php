@@ -1,26 +1,36 @@
 <?php 
 
-function filterUnitAPT($area, $location){
+function filterUnitAPT($area, $type){
     include "connection.php";
-    return $connection->query("SELECT COUNT(unit_name) FROM t_unit WHERE area = '$area' AND location = '$location' AND status IN('Ready','Breakdown','General','Standby') AND unit_type IN ('Grader','Dozer','Compac','PC200','Water Tank')");
+    return $connection->query("SELECT COUNT(unit_name) FROM t_unit WHERE area = '$area' AND status IN('Ready','Breakdown','General','Standby') AND unit_type = '$type'");
 };
-function filterUnitAPTCom($area, $location){
+function filterUnitAPTCom($area, $type){
     include "connection.php";
-    return $connection->query("SELECT * FROM t_unit WHERE area = '$area' AND location = '$location' AND status IN('Ready','Breakdown','General','Standby') AND unit_type IN ('Grader','Dozer','Compac','PC200','Water Tank') ORDER BY unit_name ASC");
+    return $connection->query("SELECT * FROM t_unit WHERE area = '$area' AND status IN('Ready','Breakdown','General','Standby') AND unit_type = '$type' ORDER BY unit_name ASC");
 };
+// Filter APT PIT 2
+$querydozerpit2 = filterUnitAPTCom('PIT 2', 'Dozer');
+$querygraderpit2 = filterUnitAPTCom('PIT 2', 'Grader');
+$querycompacpit2 = filterUnitAPTCom('PIT 2', 'Compac');
+$querypcpit2 = filterUnitAPTCom('PIT 2', 'PC200');
+$querywtpit2 = filterUnitAPTCom('PIT 2', 'Water Tank');
+// Filter APT PIT 3
+$querydozerpit3 = filterUnitAPTCom('PIT 3', 'Dozer');
+$querygraderpit3 = filterUnitAPTCom('PIT 3', 'Grader');
+$querycompacpit3 = filterUnitAPTCom('PIT 3', 'Compac');
+$querypcpit3 = filterUnitAPTCom('PIT 3', 'PC200');
+$querywtpit3 = filterUnitAPTCom('PIT 3', 'Water Tank');
 
-$queryaptjalanpit2 = filterUnitAPT('PIT 2', 'Jalan');
-$queryaptjalanpit2det = filterUnitAPTCom('PIT 2', 'Jalan');
-$queryaptfrontpit2 = filterUnitAPT('PIT 2', 'Front');
-$queryaptfrontpit2det = filterUnitAPTCom('PIT 2', 'Front');
-$queryaptdisposalpit2 = filterUnitAPT('PIT 2', 'Disposal');
-$queryaptdisposalpit2det = filterUnitAPTCom('PIT 2', 'Disposal');
-$queryaptjalanpit3 = filterUnitAPT('PIT 3', 'Jalan');
-$queryaptjalanpit3det = filterUnitAPTCom('PIT 3', 'Jalan');
-$queryaptfrontpit3 = filterUnitAPT('PIT 3', 'Front');
-$queryaptfrontpit3det = filterUnitAPTCom('PIT 3', 'Front');
-$queryaptdisposalpit3 = filterUnitAPT('PIT 3', 'Disposal');
-$queryaptdisposalpit3det = filterUnitAPTCom('PIT 3', 'Disposal');
+// $queryaptfrontpit2 = filterUnitAPT('PIT 2', 'Front');
+// $queryaptfrontpit2det = filterUnitAPTCom('PIT 2', 'Front');
+// $queryaptdisposalpit2 = filterUnitAPT('PIT 2', 'Disposal');
+// $queryaptdisposalpit2det = filterUnitAPTCom('PIT 2', 'Disposal');
+// $queryaptjalanpit3 = filterUnitAPT('PIT 3', 'Jalan');
+// $queryaptjalanpit3det = filterUnitAPTCom('PIT 3', 'Jalan');
+// $queryaptfrontpit3 = filterUnitAPT('PIT 3', 'Front');
+// $queryaptfrontpit3det = filterUnitAPTCom('PIT 3', 'Front');
+// $queryaptdisposalpit3 = filterUnitAPT('PIT 3', 'Disposal');
+// $queryaptdisposalpit3det = filterUnitAPTCom('PIT 3', 'Disposal');
 
 // Menghitung unit berdasarkan kategori tertentu
 function CountUnit($area, $unittype, $status){

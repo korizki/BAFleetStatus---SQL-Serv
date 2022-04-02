@@ -1,3 +1,24 @@
+<?php
+    session_start();
+    if(isset($_POST['logins'])){
+        if(isset($_POST['username'])){
+            if($_POST['username'] == 'Admin OB' OR $_POST['username'] == 'Admin Coal'){
+                if($_POST['password'] == 'bukitasam2022'){
+                    $_SESSION['username'] = $_POST['username'];
+                    header('Location: pages/admin.php');
+                } else {
+                    header('Location: index.php?login=failed');    
+                }
+            } else {
+                header('Location: index.php?login=failed');
+            }
+        }   
+    }
+
+    if($_GET['logout'] =='success'){
+        echo "<script>alert('Log Out berhasil.')</script>";
+    };
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,15 +36,20 @@
 <body style="background-image: url('assets/bg2.svg'); background-size: cover; background-position: 20% 140px">
     <?php
         if(isset($_GET['login'])){
-            if($_GET['login'] == 'wronguser'){
+            if($_GET['login'] == 'failed'){
                 echo "
-                <script>alert('Log In Failed, Wrong Username')
+                <script>alert('Log In gagal, Password atau Username salah')
                 </script>
                 ";
             }
-            if($_GET['login'] == 'wrongpass'){
+            if($_GET['login'] == 'failed'){
                 echo "
-                <script>alert('Log In Failed, Wrong Password')</script>
+                <script>alert('Log In gagal, Password atau Username salah')</script>
+                ";
+            }
+            if($_GET['login'] == 'nouser'){
+                echo "
+                <script>alert('Silahkan Log In terlebih dahulu!')</script>
                 ";
             }
         }
@@ -62,7 +88,7 @@
             </figure>    
             <div>
                 <h2>Log In Form</h2>
-                <form action="#" method="get">
+                <form action="" method="post">
                     <div>
                         <label for="username">Username</label>
                         <input type="text" id="username" name="username">
@@ -75,19 +101,7 @@
                 </form>
             </div>
         </div>
-        <?php 
-            if(isset($_GET['logins'])){
-                if($_GET['username'] == 'Administrator'){
-                    if($_GET['password'] =='bukitasam2022'){
-                        header('Location: pages/admin.php');
-                    } else {
-                        header('Location:index.php?login=wrongpass');
-                    };
-                } else {
-                    header('Location:index.php?login=wronguser');
-                }
-            };
-        ?>
+        
    </div>
 </body>
 </html>

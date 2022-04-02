@@ -22,6 +22,11 @@
                     <p><?php echo $generalexpit21->fetchColumn()?> Unit</p>
                 </div>
             </div>
+            <div class="datainfo">
+                <p>Loader Name</p>
+                <p>Fleet Setting</p>
+                <p>Flow Info</p>
+            </div>
             <?php 
                 $queryshovel = $connection->query("SELECT DISTINCT(unit_name) FROM t_unit WHERE area = 'PIT 2' AND unit_type = 'Excavator Tanah' AND status IN('Ready','Breakdown','Standby','General')  ORDER BY unit_name");
                 while($rowshovel = $queryshovel->fetch(PDO::FETCH_ASSOC)){
@@ -63,6 +68,11 @@
                     <h3>General</h3>
                     <p><?php echo $generalexpit2->fetchColumn()?> Unit</p>
                 </div>
+            </div>
+            <div class="datainfo">
+                <p>Loader Name</p>
+                <p>Fleet Setting</p>
+                <p>Flow Info</p>
             </div>
             <?php 
                 $queryshovel = $connection->query("SELECT DISTINCT(unit_name) FROM t_unit WHERE area = 'PIT 2' AND unit_type = 'Excavator Coal' AND status IN('Ready','Breakdown','Standby','General')  ORDER BY unit_name");
@@ -108,6 +118,11 @@
                     <p><?php echo $generalextanahpit3->fetchColumn()?> Unit</p>
                 </div>
             </div>
+            <div class="datainfo">
+                <p>Loader Name</p>
+                <p>Fleet Setting</p>
+                <p>Flow Info</p>
+            </div>
             <?php 
                 $queryshovel = $connection->query("SELECT DISTINCT(unit_name) FROM t_unit WHERE area = 'PIT 3' AND unit_type = 'Excavator Tanah' AND status IN('Ready','Breakdown','Standby','General')  ORDER BY unit_name");
                 while($rowshovel = $queryshovel->fetch(PDO::FETCH_ASSOC)){
@@ -147,6 +162,11 @@
                     <h3>General</h3>
                     <p><?php echo $generalexpit3->fetchColumn()?> Unit</p>
                 </div>
+            </div>
+            <div class="datainfo">
+                <p>Loader Name</p>
+                <p>Fleet Setting</p>
+                <p>Flow Info</p>
             </div>
             <?php 
                 $queryshovel = $connection->query("SELECT DISTINCT(unit_name) FROM t_unit WHERE area = 'PIT 3' AND unit_type = 'Excavator Coal' AND status IN('Ready','Breakdown','Standby','General')  ORDER BY unit_name");

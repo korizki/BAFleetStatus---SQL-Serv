@@ -1,7 +1,7 @@
 <div class="outerform" id="updatelocationob">
     <div class='boxinputlocation boxform' >
         <div class='header'>
-            <h2>Input Unit Location/Position (Overbudden)</h2>
+            <h2>Input Lokasi Unit (Overbudden)</h2>
             <?php 
                 if(isset($_GET['statusinput'])){
                     if($_GET['statusinput'] == "success"){
@@ -70,7 +70,7 @@
 <div class="outerform" id="updatelocationcoal">
     <div class='boxinputlocation boxform' id="updatelocationcoal">
         <div class='header'>
-            <h2>Input Unit Location/Position (Coal)</h2>
+            <h2>Input Lokasi Unit (Coal)</h2>
             <?php 
                 if(isset($_GET['statusinput'])){
                     if($_GET['statusinput'] == "successcoal"){

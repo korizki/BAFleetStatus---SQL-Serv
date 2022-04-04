@@ -1,5 +1,6 @@
+
 <div class="boxcontents">
-    <details class="tablecontent" style="display : <?php echo ($_SESSION['username'] == 'Admin Coal') ? 'none' : 'block' ?>" >
+    <details id="loc1" class="tablecontent" style="display : <?php echo ($_SESSION['username'] == 'Admin Coal') ? 'none' : 'block' ?>" >
         <summary>
             <h2><i class="fa fa-cube" style="margin-inline-end: 10px;"></i>Lokasi Unit (OB) </h2>
         </summary>
@@ -40,7 +41,7 @@
             </table>
         </div>
     </details>
-    <details class="tablecontent" style="display : <?php echo ($_SESSION['username'] == 'Admin OB') ? 'none' : 'block' ?>">
+    <details id="loc2" class="tablecontent" style="display : <?php echo ($_SESSION['username'] == 'Admin OB') ? 'none' : 'block' ?>">
         <summary>
             <h2><i class="fa fa-cubes" style="margin-inline-end: 10px;"></i>Lokasi Unit (Coal) </h2>
         </summary>
@@ -82,3 +83,7 @@
         </div>
     </details>
 </div>
+<script>
+    document.getElementById('loc1').open = true;
+    document.getElementById('loc2').open = true;
+</script>

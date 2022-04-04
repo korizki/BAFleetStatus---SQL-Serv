@@ -107,7 +107,7 @@
     <div class="boxeqtype">
         <div class="boxapt">
             <div class='aptarea'>
-                <h2><i class="fa fa-truck-loading " style="margin-inline-end: 10px;"></i>Dozer | PIT 2 (<?php echo filterUnitAPT('PIT 2', 'Dozer')->fetchColumn()?> Unit) </h2>
+                <h2><i class="fa fa-snowplow " style="margin-inline-end: 10px;"></i>Dozer | PIT 2 (<?php echo filterUnitAPT('PIT 2', 'Dozer')->fetchColumn()?> Unit) </h2>
                 <div>
                     <?php 
                         while($rowaptfront = $querydozerpit2->fetch(PDO::FETCH_ASSOC)){
@@ -119,7 +119,7 @@
                 </div>
             </div>
             <div class='aptarea'>
-                <h2><i class="fa fa-dumpster" style="margin-inline-end: 10px;"></i>Grader | PIT 2 (<?php echo filterUnitAPT('PIT 2', 'Grader')->fetchColumn()?> Unit) </h2>
+                <h2><i class="fa fa-road" style="margin-inline-end: 10px;"></i>Grader | PIT 2 (<?php echo filterUnitAPT('PIT 2', 'Grader')->fetchColumn()?> Unit) </h2>
                 <div>
                 <?php 
                         while($rowaptdisposal = $querygraderpit2->fetch(PDO::FETCH_ASSOC)){
@@ -131,7 +131,7 @@
                 </div>
             </div>
             <div class='aptarea'>
-                <h2><i class="fa fa-road" style="margin-inline-end: 10px;"></i>Compac | PIT 2 (<?php echo filterUnitAPT('PIT 2', 'Compac')->fetchColumn()?> Unit) </h2>
+                <h2><i class="fa fa-caret-square-down" style="margin-inline-end: 10px;"></i>Compac | PIT 2 (<?php echo filterUnitAPT('PIT 2', 'Compac')->fetchColumn()?> Unit) </h2>
                 <div>
                 <?php 
                         while($rowaptjalan = $querycompacpit2->fetch(PDO::FETCH_ASSOC)){
@@ -143,7 +143,7 @@
                 </div>
             </div>
             <div class='aptarea'>
-                <h2><i class="fa fa-road" style="margin-inline-end: 10px;"></i>PC 200 | PIT 2 (<?php echo filterUnitAPT('PIT 2', 'PC200')->fetchColumn()?> Unit) </h2>
+                <h2><i class="fa fa-check-double" style="margin-inline-end: 10px;"></i>PC 200 | PIT 2 (<?php echo filterUnitAPT('PIT 2', 'PC200')->fetchColumn()?> Unit) </h2>
                 <div>
                 <?php 
                         while($rowaptjalan = $querypcpit2->fetch(PDO::FETCH_ASSOC)){
@@ -155,7 +155,7 @@
                 </div>
             </div>
             <div class='aptarea'>
-                <h2><i class="fa fa-road" style="margin-inline-end: 10px;"></i>Water Tank | PIT 2 (<?php echo filterUnitAPT('PIT 2', 'Water Tank')->fetchColumn()?> Unit) </h2>
+                <h2><i class="fa fa-tint" style="margin-inline-end: 10px;"></i>Water Tank | PIT 2 (<?php echo filterUnitAPT('PIT 2', 'Water Tank')->fetchColumn()?> Unit) </h2>
                 <div>
                 <?php 
                         while($rowaptjalan = $querywtpit2->fetch(PDO::FETCH_ASSOC)){
@@ -169,7 +169,7 @@
         </div>
         <div class="boxapt">
             <div class='aptarea'>
-                <h2><i class="fa fa-truck-loading " style="margin-inline-end: 10px;"></i>Dozer | PIT 3 (<?php echo filterUnitAPT('PIT 3', 'Dozer')->fetchColumn()?> Unit) </h2>
+                <h2><i class="fa fa-snowplow " style="margin-inline-end: 10px;"></i>Dozer | PIT 3 (<?php echo filterUnitAPT('PIT 3', 'Dozer')->fetchColumn()?> Unit) </h2>
                 <div>
                     <?php 
                         while($rowaptfront = $querydozerpit3->fetch(PDO::FETCH_ASSOC)){
@@ -181,7 +181,7 @@
                 </div>
             </div>
             <div class='aptarea'>
-                <h2><i class="fa fa-dumpster" style="margin-inline-end: 10px;"></i>Grader | PIT 3 (<?php echo filterUnitAPT('PIT 3', 'Grader')->fetchColumn()?> Unit) </h2>
+                <h2><i class="fa fa-road" style="margin-inline-end: 10px;"></i>Grader | PIT 3 (<?php echo filterUnitAPT('PIT 3', 'Grader')->fetchColumn()?> Unit) </h2>
                 <div>
                 <?php 
                         while($rowaptdisposal = $querygraderpit3->fetch(PDO::FETCH_ASSOC)){
@@ -193,7 +193,7 @@
                 </div>
             </div>
             <div class='aptarea'>
-                <h2><i class="fa fa-road" style="margin-inline-end: 10px;"></i>Compac | PIT 3 (<?php echo filterUnitAPT('PIT 3', 'Compac')->fetchColumn()?> Unit) </h2>
+                <h2><i class="fa fa-caret-square-down" style="margin-inline-end: 10px;"></i>Compac | PIT 3 (<?php echo filterUnitAPT('PIT 3', 'Compac')->fetchColumn()?> Unit) </h2>
                 <div>
                 <?php 
                         while($rowaptjalan = $querycompacpit3->fetch(PDO::FETCH_ASSOC)){
@@ -205,7 +205,7 @@
                 </div>
             </div>
             <div class='aptarea'>
-                <h2><i class="fa fa-road" style="margin-inline-end: 10px;"></i>PC 200 | PIT 3 (<?php echo filterUnitAPT('PIT 3', 'PC200')->fetchColumn()?> Unit) </h2>
+                <h2><i class="fa fa-check-double" style="margin-inline-end: 10px;"></i>PC 200 | PIT 3 (<?php echo filterUnitAPT('PIT 3', 'PC200')->fetchColumn()?> Unit) </h2>
                 <div>
                 <?php 
                         while($rowaptjalan = $querypcpit3->fetch(PDO::FETCH_ASSOC)){
@@ -217,7 +217,7 @@
                 </div>
             </div>
             <div class='aptarea'>
-                <h2><i class="fa fa-road" style="margin-inline-end: 10px;"></i>Water Tank | PIT 3 (<?php echo filterUnitAPT('PIT 3', 'Water Tank')->fetchColumn()?> Unit) </h2>
+                <h2><i class="fa fa-tint" style="margin-inline-end: 10px;"></i>Water Tank | PIT 3 (<?php echo filterUnitAPT('PIT 3', 'Water Tank')->fetchColumn()?> Unit) </h2>
                 <div>
                 <?php 
                         while($rowaptjalan = $querywtpit3->fetch(PDO::FETCH_ASSOC)){

@@ -1,5 +1,5 @@
 <div class="boxcontents">
-    <details class="tablecontent" style="display : <?php echo ($_SESSION['username'] == 'Admin Coal') ? 'none' : 'block' ?>">
+    <details id="flow1" class="tablecontent" style="display : <?php echo ($_SESSION['username'] == 'Admin Coal') ? 'none' : 'block' ?>">
         <summary>
             <h2><i class="fa fa-cube" style="margin-inline-end: 10px;"></i>Flow Hauler (OB) </h2>
         </summary>
@@ -40,7 +40,7 @@
             </table>
         </div>
     </details>
-    <details class="tablecontent" style="display : <?php echo ($_SESSION['username'] == 'Admin OB') ? 'none' : 'block' ?>">
+    <details id="flow2" class="tablecontent" style="display : <?php echo ($_SESSION['username'] == 'Admin OB') ? 'none' : 'block' ?>">
         <summary>
             <h2><i class="fa fa-cubes" style="margin-inline-end: 10px;"></i>Flow Hauler (Coal) </h2>
         </summary>
@@ -82,3 +82,7 @@
         </div>
     </details>
 </div>
+<script>
+    document.getElementById('flow1').open = true;
+    document.getElementById('flow2').open = true;
+</script>

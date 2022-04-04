@@ -66,8 +66,6 @@ if(isset($_POST['submitdatabd'])){
             $updatefleet = $connection->query("INSERT INTO t_fleet (fleet_unit, fleet_hauler, fleet_updated_at, fleet_hauler_type) VALUES ('$unitname',0,getDate(), 'Belaz')");
             // query update fleet HD PPA
             $updatefleet = $connection->query("INSERT INTO t_fleet (fleet_unit, fleet_hauler, fleet_updated_at, fleet_hauler_type) VALUES ('$unitname',0,getDate(), 'HD PPA')");
-            // query update data flow
-            $insertflow = $connection->query("INSERT INTO t_flow (fl_unit_name, fl_info, fl_updated_at) VALUES ('$unitname','', getDate())");
         }
     }
     // update status unit di table unit
@@ -84,6 +82,23 @@ if(isset($_POST['submitdatabdcoal'])){
     $detail = $_POST['detailstatus'];
     // query tambah data 
     $insertdata = $connection->query("INSERT INTO t_historybd (his_unit_name, his_type, his_detail, his_updated_at) VALUES ('$unitname','$status', '$detail', getDate())");
+    // query cari tipe unit
+    $cekunit = $connection->query("SELECT unit_type FROM t_unit WHERE unit_name = '$unitname' ");
+    $dataunit = $cekunit->fetch(PDO::FETCH_COLUMN,0);
+    if($dataunit == 'Excavator Coal' OR $dataunit == 'Excavator Tanah'){
+        if($status == 'Standby' OR $status == 'Breakdown'){
+            // query update fleet powerplus
+            $updatefleet = $connection->query("INSERT INTO t_fleet (fleet_unit, fleet_hauler, fleet_updated_at, fleet_hauler_type) VALUES ('$unitname',0,getDate(), 'Power Plus')");
+            // query update fleet skt
+            $updatefleet = $connection->query("INSERT INTO t_fleet (fleet_unit, fleet_hauler, fleet_updated_at, fleet_hauler_type) VALUES ('$unitname',0,getDate(), 'SKT')");
+            // query update fleet sany
+            $updatefleet = $connection->query("INSERT INTO t_fleet (fleet_unit, fleet_hauler, fleet_updated_at, fleet_hauler_type) VALUES ('$unitname',0,getDate(), 'Sany')");
+            // query update fleet kamaz
+            $updatefleet = $connection->query("INSERT INTO t_fleet (fleet_unit, fleet_hauler, fleet_updated_at, fleet_hauler_type) VALUES ('$unitname',0,getDate(), 'Kamaz')");
+            // update flow unit
+            $insertdata = $connection->query("INSERT INTO t_flow (fl_unit_name, fl_info, fl_updated_at) VALUES ('$unitname','', getDate())");
+        }
+    }
     $updatedata = $connection->query("UPDATE t_unit SET status = '$status' WHERE t_unit.unit_name = '$unitname'");
     if($insertdata){
         header('Location: ../pages/admin.php?content=status&statusinput=bdcoalsuccess');

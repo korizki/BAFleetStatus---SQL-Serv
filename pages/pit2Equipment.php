@@ -205,7 +205,7 @@
                 </div>
             </div>
             <div class='aptarea'>
-                <h2><i class="fa fa-road" style="margin-inline-end: 10px;"></i>PC 200 | PIT 2 (<?php echo filterUnitAPT('PIT 3', 'PC200')->fetchColumn()?> Unit) </h2>
+                <h2><i class="fa fa-road" style="margin-inline-end: 10px;"></i>PC 200 | PIT 3 (<?php echo filterUnitAPT('PIT 3', 'PC200')->fetchColumn()?> Unit) </h2>
                 <div>
                 <?php 
                         while($rowaptjalan = $querypcpit3->fetch(PDO::FETCH_ASSOC)){
@@ -217,7 +217,7 @@
                 </div>
             </div>
             <div class='aptarea'>
-                <h2><i class="fa fa-road" style="margin-inline-end: 10px;"></i>Water Tank | PIT 2 (<?php echo filterUnitAPT('PIT 3', 'Water Tank')->fetchColumn()?> Unit) </h2>
+                <h2><i class="fa fa-road" style="margin-inline-end: 10px;"></i>Water Tank | PIT 3 (<?php echo filterUnitAPT('PIT 3', 'Water Tank')->fetchColumn()?> Unit) </h2>
                 <div>
                 <?php 
                         while($rowaptjalan = $querywtpit3->fetch(PDO::FETCH_ASSOC)){

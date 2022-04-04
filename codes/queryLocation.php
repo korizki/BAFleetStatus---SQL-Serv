@@ -21,17 +21,6 @@ $querycompacpit3 = filterUnitAPTCom('PIT 3', 'Compac');
 $querypcpit3 = filterUnitAPTCom('PIT 3', 'PC200');
 $querywtpit3 = filterUnitAPTCom('PIT 3', 'Water Tank');
 
-// $queryaptfrontpit2 = filterUnitAPT('PIT 2', 'Front');
-// $queryaptfrontpit2det = filterUnitAPTCom('PIT 2', 'Front');
-// $queryaptdisposalpit2 = filterUnitAPT('PIT 2', 'Disposal');
-// $queryaptdisposalpit2det = filterUnitAPTCom('PIT 2', 'Disposal');
-// $queryaptjalanpit3 = filterUnitAPT('PIT 3', 'Jalan');
-// $queryaptjalanpit3det = filterUnitAPTCom('PIT 3', 'Jalan');
-// $queryaptfrontpit3 = filterUnitAPT('PIT 3', 'Front');
-// $queryaptfrontpit3det = filterUnitAPTCom('PIT 3', 'Front');
-// $queryaptdisposalpit3 = filterUnitAPT('PIT 3', 'Disposal');
-// $queryaptdisposalpit3det = filterUnitAPTCom('PIT 3', 'Disposal');
-
 // Menghitung unit berdasarkan kategori tertentu
 function CountUnit($area, $unittype, $status){
     include "connection.php";

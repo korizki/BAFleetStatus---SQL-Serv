@@ -86,7 +86,7 @@ if(isset($_POST['submitdatabdcoal'])){
     $cekunit = $connection->query("SELECT unit_type FROM t_unit WHERE unit_name = '$unitname' ");
     $dataunit = $cekunit->fetch(PDO::FETCH_COLUMN,0);
     if($dataunit == 'Excavator Coal' OR $dataunit == 'Excavator Tanah'){
-        if($status == 'Standby' OR $status == 'Breakdown'){
+        if($status == 'Standby' OR $status == 'Breakdown' OR $status == 'General'){
             // query update fleet powerplus
             $updatefleet = $connection->query("INSERT INTO t_fleet (fleet_unit, fleet_hauler, fleet_updated_at, fleet_hauler_type) VALUES ('$unitname',0,getDate(), 'Power Plus')");
             // query update fleet skt

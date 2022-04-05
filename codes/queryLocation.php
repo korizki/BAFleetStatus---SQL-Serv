@@ -41,16 +41,22 @@ $readypit2 = countUnit('PIT 2', 'Shovel PC-3000', 'Ready');
 $breakdownpit2 = countUnit('PIT 2', 'Shovel PC-3000', 'Breakdown');
 $standbypit2 = countUnit('PIT 2', 'Shovel PC-3000', 'Standby');
 $generalpit2 = countUnit('PIT 2', 'Shovel PC-3000', 'General');
+// Count Ex Coal PIT2
 $readyexpit2 = countUnit('PIT 2', 'Excavator Coal', 'Ready');
 $breakdownexpit2 = countUnit('PIT 2', 'Excavator Coal', 'Breakdown');
 $standbyexpit2 = countUnit('PIT 2', 'Excavator Coal', 'Standby');
 $generalexpit2 = countUnit('PIT 2', 'Excavator Coal', 'General');
+// Count Exa Tanah PIT 2
 $readyexpit21 = countUnit('PIT 2', 'Excavator Tanah', 'Ready');
 $breakdownexpit21 = countUnit('PIT 2', 'Excavator Tanah', 'Breakdown');
 $standbyexpit21 = countUnit('PIT 2', 'Excavator Tanah', 'Standby');
 $generalexpit21 = countUnit('PIT 2', 'Excavator Tanah', 'General');
+// Count Kamaz PIT 2
+$readykmzpit2 = countUnit('PIT 2', 'DT Kamaz', 'Ready');
+$breakdownkmzpit2 = countUnit('PIT 2', 'DT Kamaz', 'Breakdown');
+$standbykmzpit2 = countUnit('PIT 2', 'DT Kamaz', 'Standby');
+$generalkmzpit2 = countUnit('PIT 2', 'DT Kamaz', 'General');
 // PIT 2 show unit
-
 $belazready2 = ShowUnit('PIT 2','Belaz', 'Ready');
 $hdready2 = ShowUnit('PIT 2','HD PPA', 'Ready');
 $belazbd2 = ShowUnit('PIT 2','Belaz', 'Breakdown');
@@ -71,16 +77,17 @@ $readypit3 = countUnit('PIT 3', 'Shovel PC-3000', 'Ready');
 $breakdownpit3 = countUnit('PIT 3', 'Shovel PC-3000', 'Breakdown');
 $standbypit3 = countUnit('PIT 3', 'Shovel PC-3000', 'Standby');
 $generalpit3 = countUnit('PIT 3', 'Shovel PC-3000', 'General');
-
+// Count Exa Tanah
 $readyextanahpit3 = countUnit('PIT 3', 'Excavator Tanah', 'Ready');
 $breakdownextanahpit3 = countUnit('PIT 3', 'Excavator Tanah', 'Breakdown');
 $standbyextanahpit3 = countUnit('PIT 3', 'Excavator Tanah', 'Standby');
 $generalextanahpit3 = countUnit('PIT 3', 'Excavator Tanah', 'General');
-
+// Count Exa Coal
 $readyexpit3 = countUnit('PIT 3', 'Excavator Coal', 'Ready');
 $breakdownexpit3 = countUnit('PIT 3', 'Excavator Coal', 'Breakdown');
 $standbyexpit3 = countUnit('PIT 3', 'Excavator Coal', 'Standby');
 $generalexpit3 = countUnit('PIT 3', 'Excavator Coal', 'General');
+// Count Kamaz Coal 
 
 function getStatus($unitname){
     include "connection.php";

@@ -108,7 +108,7 @@
             <input list="listeqcoal" name="unitname" id="unitname" style="width: 150px;">
             <datalist id="listeqcoal">
                 <?php 
-                    $sqlunit = $connection->query("SELECT * FROM t_unit WHERE unit_type IN ('Excavator','Excavator Coal','Excavator Tanah') ORDER BY unit_name");
+                    $sqlunit = $connection->query("SELECT * FROM t_unit WHERE unit_type IN ('Excavator','Excavator Coal','Excavator Tanah','DT Kamaz') ORDER BY unit_name");
                     while($rowunit = $sqlunit->fetch(PDO::FETCH_ASSOC)){
                         ?>
                             <option value="<?php echo $rowunit['unit_name']?>"><?php echo $rowunit['unit_name']?></option>
@@ -123,11 +123,12 @@
                 <option value="PIT 3">PIT 3</option>
                 <option value="Workshop">Workshop</option>
             </select>
-            <label for="loadertype">Tipe Loader</label>
+            <label for="loadertype">Tipe Unit</label>
             <select name="loadertype" id="loadertype" style="width: 150px;" required>
-                <option value="" selected disabled>-- Type Loader --</option>
+                <option value="" selected disabled>-- Type Unit --</option>
                 <option value="Excavator Coal">Excavator Coal</option>
                 <option value="Excavator Tanah">Excavator Tanah</option>
+                <option value="DT Kamaz">DT Kamaz</option>
             </select>
             <button type="submit" name="submitdatacoal"><i class="fa fa-paper-plane" style="margin-inline-end: 8px" ></i>Submit Data</button>
         </form>

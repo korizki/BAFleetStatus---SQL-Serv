@@ -150,7 +150,7 @@ main{
     flex-wrap: wrap;
 }
 .coalsummary>div>p{
-    text-align: center;
+    text-align: left;
 }
 .aptarea > div > p{
     padding: 8px 15px;

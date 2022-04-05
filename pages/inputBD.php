@@ -102,7 +102,7 @@
             <input list="unitnames2" name="unitname" id="unitname">
             <datalist id="unitnames2">
                 <?php 
-                    $sqlunit = $connection->query("SELECT * FROM t_unit WHERE unit_type IN ('Excavator','Excavator Tanah','Excavator Coal') ORDER BY unit_name");
+                    $sqlunit = $connection->query("SELECT * FROM t_unit WHERE unit_type IN ('Excavator','Excavator Tanah','Excavator Coal', 'DT Kamaz') ORDER BY unit_name");
                     while($rowunit = $sqlunit->fetch(PDO::FETCH_ASSOC)){
                         ?>
                             <option value="<?php echo $rowunit['unit_name']?>"><?php echo $rowunit['unit_name']?></option>

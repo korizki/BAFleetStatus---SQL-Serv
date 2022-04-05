@@ -64,7 +64,7 @@
                     <?php 
                         include "../codes/connection.php"; 
                         $no = 1;
-                        $getdata = $connection->query("SELECT TOP(50) * FROM t_historybd INNER JOIN t_unit ON his_unit_name = t_unit.unit_name WHERE t_unit.unit_type IN ('Excavator','Excavator Tanah','Excavator Coal') ORDER BY id_his DESC");
+                        $getdata = $connection->query("SELECT TOP(50) * FROM t_historybd INNER JOIN t_unit ON his_unit_name = t_unit.unit_name WHERE t_unit.unit_type IN ('Excavator','Excavator Tanah','Excavator Coal', 'DT Kamaz') ORDER BY id_his DESC");
                         while($row = $getdata->fetch(PDO::FETCH_ASSOC)){
                             ?>
                             <tr>

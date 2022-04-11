@@ -3,10 +3,10 @@
     include "../codes/queryFleet.php";
 ?>
 <article class="boxlocation">
-    <h3><i class="fa fa-coins" style="margin-inline-end: 8px; margin-inline-start: 10px;"></i>Overbudden | Primary Mining Equipment</h3>
+    <h3><i class="fa fa-coins" style="margin-inline-end: 8px; margin-inline-start: 10px;"></i>Overbudden | PIT 2</h3>
     <div class="boxeqtype">
-        <div class="boxShovel">
-            <h1>PIT 2 Banko Barat</h1>
+        <div class="boxShovel" style="flex: 2">
+            <h1>Primary Mining Equipment</h1>
             <div class="shovelsummary">
                 <div>
                     <h3>Ready</h3>
@@ -31,30 +31,121 @@
                 </div>
             </div>
             <div class="datainfo">
-                <p>Loader Name</p>
-                <p>Fleet Setting</p>
-                <p>Flow Info</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Loader Info</th>
+                            <th>Status</th>
+                            <th>Setting Fleet</th>
+                            <th>Flow</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php 
+                            $no = 1;
+                            $queryshovel = $connection->query("SELECT DISTINCT(unit_name) FROM t_unit WHERE area = 'PIT 2' AND unit_type IN ('Shovel PC-3000', 'PC 1250') AND status IN('Ready','Breakdown','Standby','General') ORDER BY unit_name ASC");
+                            while($rowshovel = $queryshovel->fetch(PDO::FETCH_ASSOC)){
+                                ?>
+                                    <tr >
+                                        <td><?php echo $no ++."."?></td>
+                                        <td>
+                                            <h4 id="shovelName" style="padding: 5px 10px; margin-bottom: 5px; display: inline-block; border-bottom: 1px solid var(--line)" ><?php echo $rowshovel['unit_name'] ?></h4>
+                                            <p><?php echo getUnitType($rowshovel['unit_name'])->fetch(PDO::FETCH_COLUMN,0)?></p>
+                                        </td>
+                                        <td>
+                                            <span class="shovelstatus <?php echo getStatus($rowshovel['unit_name'])->fetch(PDO::FETCH_COLUMN, 0)?>" title="Unit <?php echo getStatus($rowshovel['unit_name'])->fetch(PDO::FETCH_COLUMN, 0)?> | <?php echo getDetail($rowshovel['unit_name'])->fetch(PDO::FETCH_COLUMN, 0) ?> "><?php echo getStatus($rowshovel['unit_name'])->fetch(PDO::FETCH_COLUMN, 0)?></span>
+                                        </td>
+                                        <td>
+                                            <div class="setUnit">
+                                                <p> <?php echo (getFleet($rowshovel['unit_name'], 'Belaz')->fetchColumn(2) == 0)? "" : getFleet($rowshovel['unit_name'], 'Belaz')->fetchColumn(2)." Belaz"; ?> </p>
+                                                <p> <?php echo (getFleet($rowshovel['unit_name'], 'HD PPA')->fetchColumn(2) == 0) ? "" : getFleet($rowshovel['unit_name'], 'HD PPA')->fetchColumn(2)." HD PPA"; ?></p>
+                                            </div>
+                                        </td>
+                                        <td><p style="text-align:center"><?php echo getflow($rowshovel['unit_name'])->fetchColumn(2);?></p></td>
+                                    </tr>
+                                <?php
+                            }
+                        ?>
+                        
+                    </tbody>
+                </table>
             </div>
-            <?php 
-                $queryshovel = $connection->query("SELECT DISTINCT(unit_name) FROM t_unit WHERE area = 'PIT 2' AND unit_type IN ('Shovel PC-3000', 'PC 1250') AND status IN('Ready','Breakdown','Standby','General') ORDER BY unit_name ASC");
-                while($rowshovel = $queryshovel->fetch(PDO::FETCH_ASSOC)){
-                    ?>
-                        <div class="boxdetailshovel" style=" justify-content: space-around">
-                            <img src="../assets/logo/exca.svg" alt="shovelicon" style="margin-inline-start: 5px;"/>
-                            <h4 id="shovelName" class="shovelstatus <?php echo getStatus($rowshovel['unit_name'])->fetch(PDO::FETCH_COLUMN, 0)?>" title="Unit <?php echo getStatus($rowshovel['unit_name'])->fetch(PDO::FETCH_COLUMN, 0)?> | <?php echo getDetail($rowshovel['unit_name'])->fetch(PDO::FETCH_COLUMN, 0) ?> "><?php echo $rowshovel['unit_name'] ?></h4>
-                            <div class="setUnit">
-                                <p style="width: 100px; text-align:center"><?php echo (getFleet($rowshovel['unit_name'], 'Belaz')->fetchColumn(2) == 0)? "" : getFleet($rowshovel['unit_name'], 'Belaz')->fetchColumn(2)." Belaz"; ?> </p>
-                                <p style="width: 100px"><?php echo (getFleet($rowshovel['unit_name'], 'HD PPA')->fetchColumn(2) == 0) ? "" : getFleet($rowshovel['unit_name'], 'HD PPA')->fetchColumn(2)." HD PPA"; ?></p>
-                            </div>
-                            <p style="width: 240px; text-align:center"><?php echo getflow($rowshovel['unit_name'])->fetchColumn(2);?></p>
-                        </div>
-                    <?php
-                }
-            ?>
         </div>
-        <!-- <div class="boxeqtype"> -->
-        <div class="boxShovel">
-            <h1>PIT 3 Banko Barat</h1>
+        <div class='boxeqtype' style="flex: 1">
+            <div class="boxapt">
+                <div class='aptarea boxShovel'>
+                    <h1>Mining Support Unit</h1>
+                    <details title="Click to Expand">
+                        <summary><i class="fa fa-snowplow " style="margin-inline-end: 10px;"></i>Dozer <span style="float: right"><?php echo filterUnitAPT('PIT 2', 'Dozer')->fetchColumn()?> Unit </span></summary>
+                        <div>
+                            <?php 
+                                while($rowaptfront = $querydozerpit2->fetch(PDO::FETCH_ASSOC)){
+                                    ?>
+                                        <p class="<?php echo getStatus($rowaptfront['unit_name'])->fetch(PDO::FETCH_COLUMN, 0) ?>" title="<?php echo getDetail($rowaptfront['unit_name'])->fetch(PDO::FETCH_COLUMN, 0)?>" ><?php echo $rowaptfront['unit_name'] ?></p>
+                                    <?php
+                                }
+                            ?>
+                        </div>
+                    </details>
+                    <details title="Click to Expand">
+                        <summary><i class="fa fa-road" style="margin-inline-end: 10px;"></i>Grader <span style="float: right"><?php echo filterUnitAPT('PIT 2', 'Grader')->fetchColumn()?> Unit</span></summary>
+                        <div>
+                            <?php 
+                                while($rowaptdisposal = $querygraderpit2->fetch(PDO::FETCH_ASSOC)){
+                                    ?>
+                                        <p class="<?php echo getStatus($rowaptdisposal['unit_name'])->fetch(PDO::FETCH_COLUMN, 0) ?>" title="<?php echo getDetail($rowaptdisposal['unit_name'])->fetch(PDO::FETCH_COLUMN, 0) ?>"><?php echo $rowaptdisposal['unit_name'] ?></p>
+                                    <?php
+                                }
+                            ?>
+                        </div>
+                    </details>
+                    <details title="Click to Expand">
+                        <summary><i class="fa fa-caret-square-down" style="margin-inline-end: 10px;"></i>Compac <span style="float: right"><?php echo filterUnitAPT('PIT 2', 'Compac')->fetchColumn()?> Unit</span></summary>
+                        <div>
+                            <?php 
+                                while($rowaptjalan = $querycompacpit2->fetch(PDO::FETCH_ASSOC)){
+                                    ?>
+                                        <p class="<?php echo getStatus($rowaptjalan['unit_name'])->fetch(PDO::FETCH_COLUMN,0) ?>" title="<?php echo getDetail($rowaptjalan['unit_name'])->fetch(PDO::FETCH_COLUMN,0) ?>"><?php echo $rowaptjalan['unit_name'] ?></p>
+                                    <?php
+                                }
+                            ?>
+                        </div>
+                    </details>
+                    <details title="Click to Expand">
+                        <summary><i class="fa fa-check-double" style="margin-inline-end: 10px;"></i>PC 200 <span style="float: right"><?php echo filterUnitAPT('PIT 2', 'PC200')->fetchColumn()?> Unit</span></summary>
+                        <div>
+                            <?php 
+                                while($rowaptjalan = $querypcpit2->fetch(PDO::FETCH_ASSOC)){
+                                    ?>
+                                        <p class="<?php echo getStatus($rowaptjalan['unit_name'])->fetch(PDO::FETCH_COLUMN,0) ?>" title="<?php echo getDetail($rowaptjalan['unit_name'])->fetch(PDO::FETCH_COLUMN,0) ?>"><?php echo $rowaptjalan['unit_name'] ?></p>
+                                    <?php
+                                }
+                            ?>
+                        </div>
+                    </details>
+                    <details title="Click to Expand">
+                        <summary><i class="fa fa-tint" style="margin-inline-end: 10px;"></i>Water Tank <span style="float: right"><?php echo filterUnitAPT('PIT 2', 'Water Tank')->fetchColumn()?> Unit</span></summary>
+                        <div>
+                            <?php 
+                                while($rowaptjalan = $querywtpit2->fetch(PDO::FETCH_ASSOC)){
+                                    ?>
+                                        <p class="<?php echo getStatus($rowaptjalan['unit_name'])->fetch(PDO::FETCH_COLUMN,0) ?>" title="<?php echo getDetail($rowaptjalan['unit_name'])->fetch(PDO::FETCH_COLUMN,0) ?>"><?php echo $rowaptjalan['unit_name'] ?></p>
+                                    <?php
+                                }
+                            ?>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+<article class="boxlocation" style="margin-top: 40px">
+    <h3><i class="fa fa-coins" style="margin-inline-end: 8px; margin-inline-start: 10px;"></i>Overbudden | PIT 3</h3>
+    <div class="boxeqtype">
+        <div class="boxShovel" style="flex: 2">
+            <h1>Primary Mining Equipment</h1>
             <div class="shovelsummary" style="justify-content: space-around">
                 <div>
                     <h3>Ready</h3>
@@ -79,153 +170,111 @@
                 </div>
             </div>
             <div class="datainfo">
-                <p>Loader Name</p>
-                <p>Fleet Setting</p>
-                <p>Flow Info</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Loader Info</th>
+                            <th>Status</th>
+                            <th>Setting Fleet</th>
+                            <th>Flow</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php 
+                            $no = 1;
+                            $queryshovel = $connection->query("SELECT DISTINCT(unit_name) FROM t_unit WHERE area = 'PIT 3' AND unit_type IN ('Shovel PC-3000', 'PC 1250') AND status IN('Ready','Breakdown','Standby','General') ORDER BY unit_name ASC");
+                            while($rowshovel = $queryshovel->fetch(PDO::FETCH_ASSOC)){
+                                ?>
+                                    <tr >
+                                        <td><?php echo $no ++."."?></td>
+                                        <td>
+                                            <h4 id="shovelName" style="padding: 5px 10px; margin-bottom: 5px; display: inline-block; border-bottom: 1px solid var(--line)" ><?php echo $rowshovel['unit_name'] ?></h4>
+                                            <p><?php echo getUnitType($rowshovel['unit_name'])->fetch(PDO::FETCH_COLUMN,0)?></p>
+                                        </td>
+                                        <td>
+                                            <span class="shovelstatus <?php echo getStatus($rowshovel['unit_name'])->fetch(PDO::FETCH_COLUMN, 0)?>" title="Unit <?php echo getStatus($rowshovel['unit_name'])->fetch(PDO::FETCH_COLUMN, 0)?> | <?php echo getDetail($rowshovel['unit_name'])->fetch(PDO::FETCH_COLUMN, 0) ?> "><?php echo getStatus($rowshovel['unit_name'])->fetch(PDO::FETCH_COLUMN, 0)?></span>
+                                        </td>
+                                        <td>
+                                            <div class="setUnit">
+                                                <p> <?php echo (getFleet($rowshovel['unit_name'], 'Belaz')->fetchColumn(2) == 0)? "" : getFleet($rowshovel['unit_name'], 'Belaz')->fetchColumn(2)." Belaz"; ?> </p>
+                                                <p> <?php echo (getFleet($rowshovel['unit_name'], 'HD PPA')->fetchColumn(2) == 0) ? "" : getFleet($rowshovel['unit_name'], 'HD PPA')->fetchColumn(2)." HD PPA"; ?></p>
+                                            </div>
+                                        </td>
+                                        <td><p style="text-align:center"><?php echo getflow($rowshovel['unit_name'])->fetchColumn(2);?></p></td>
+                                    </tr>
+                                <?php
+                            }
+                        ?>
+                        
+                    </tbody>
+                </table>
             </div>
-            <?php 
-                $queryshovel = $connection->query("SELECT DISTINCT(unit_name) FROM t_unit WHERE area = 'PIT 3' AND unit_type IN ('Shovel PC-3000','PC 1250') AND status IN('Ready','Breakdown','Standby','General') ORDER BY unit_name DESC" );
-                while($rowshovel = $queryshovel->fetch(PDO::FETCH_ASSOC)){
-                    ?>
-                        <div class="boxdetailshovel pit3" style=" justify-content: space-around">
-                            <img src="../assets/logo/exca.svg" alt="shovelicon" style="margin-inline-start: 5px;"/>
-                            <h4 id="shovelName" class="shovelstatus <?php echo getStatus($rowshovel['unit_name'])->fetch(PDO::FETCH_COLUMN,0)?>" title="Unit <?php echo getStatus($rowshovel['unit_name'])->fetch(PDO::FETCH_COLUMN,0);?> | <?php echo getDetail($rowshovel['unit_name'])->fetch(PDO::FETCH_COLUMN,0)?>"><?php echo $rowshovel['unit_name'] ?></h4>
-                            <div class="setUnit">
-                                <p style="width: 100px; text-align:center"><?php echo (getFleet($rowshovel['unit_name'], 'Belaz')->fetchColumn(2) == 0)? "" : getFleet($rowshovel['unit_name'], 'Belaz')->fetchColumn(2)." Belaz"; ?> </p>
-                                <p style="width: 100px"><?php echo (getFleet($rowshovel['unit_name'], 'HD PPA')->fetchColumn(2) == 0) ? "" : getFleet($rowshovel['unit_name'], 'HD PPA')->fetchColumn(2)." HD PPA"; ?></p>
-                            </div>
-                            <p><?php echo getflow($rowshovel['unit_name'])->fetchColumn(2);?></p>
+        </div>
+        <div class='boxeqtype' style="flex: 1">
+            <div class="boxapt">
+                <div class='aptarea boxShovel'>
+                    <h1>Mining Support Unit</h1>
+                    <details title="Click to Expand">
+                        <summary><i class="fa fa-snowplow " style="margin-inline-end: 10px;"></i>Dozer <span style="float: right"><?php echo filterUnitAPT('PIT 3', 'Dozer')->fetchColumn()?> Unit </span></summary>
+                        <div>
+                            <?php 
+                                while($rowaptfront = $querydozerpit3->fetch(PDO::FETCH_ASSOC)){
+                                    ?>
+                                        <p class="<?php echo getStatus($rowaptfront['unit_name'])->fetch(PDO::FETCH_COLUMN, 0) ?>" title="<?php echo getDetail($rowaptfront['unit_name'])->fetch(PDO::FETCH_COLUMN, 0)?>" ><?php echo $rowaptfront['unit_name'] ?></p>
+                                    <?php
+                                }
+                            ?>
                         </div>
-                    <?php
-                }
-            ?>
-        </div>
-    </div>
-        
-    </div>
-    <h3 style="margin-top: 80px;" class="judulapt"><i class="fa fa-coins" style="margin-inline-end: 8px; margin-inline-start: 10px;" ></i>Overbudden | Mining Support Equipment</h3>
-    <div class="boxeqtype">
-        <div class="boxapt">
-            <div class='aptarea'>
-                <h2><i class="fa fa-snowplow " style="margin-inline-end: 10px;"></i>Dozer | PIT 2 (<?php echo filterUnitAPT('PIT 2', 'Dozer')->fetchColumn()?> Unit) </h2>
-                <div>
-                    <?php 
-                        while($rowaptfront = $querydozerpit2->fetch(PDO::FETCH_ASSOC)){
+                    </details>
+                    <details title="Click to Expand">
+                        <summary><i class="fa fa-road" style="margin-inline-end: 10px;"></i>Grader <span style="float: right"><?php echo filterUnitAPT('PIT 3', 'Grader')->fetchColumn()?> Unit</span></summary>
+                        <div>
+                            <?php 
+                                while($rowaptdisposal = $querygraderpit3->fetch(PDO::FETCH_ASSOC)){
+                                    ?>
+                                        <p class="<?php echo getStatus($rowaptdisposal['unit_name'])->fetch(PDO::FETCH_COLUMN, 0) ?>" title="<?php echo getDetail($rowaptdisposal['unit_name'])->fetch(PDO::FETCH_COLUMN, 0) ?>"><?php echo $rowaptdisposal['unit_name'] ?></p>
+                                    <?php
+                                }
                             ?>
-                                <p class="<?php echo getStatus($rowaptfront['unit_name'])->fetch(PDO::FETCH_COLUMN, 0) ?>" title="<?php echo getDetail($rowaptfront['unit_name'])->fetch(PDO::FETCH_COLUMN, 0)?>" ><?php echo $rowaptfront['unit_name'] ?></p>
-                            <?php
-                        }
-                    ?>
-                </div>
-            </div>
-            <div class='aptarea'>
-                <h2><i class="fa fa-road" style="margin-inline-end: 10px;"></i>Grader | PIT 2 (<?php echo filterUnitAPT('PIT 2', 'Grader')->fetchColumn()?> Unit) </h2>
-                <div>
-                <?php 
-                        while($rowaptdisposal = $querygraderpit2->fetch(PDO::FETCH_ASSOC)){
+                        </div>
+                    </details>
+                    <details title="Click to Expand">
+                        <summary><i class="fa fa-caret-square-down" style="margin-inline-end: 10px;"></i>Compac <span style="float: right"><?php echo filterUnitAPT('PIT 3', 'Compac')->fetchColumn()?> Unit</span></summary>
+                        <div>
+                            <?php 
+                                while($rowaptjalan = $querycompacpit3->fetch(PDO::FETCH_ASSOC)){
+                                    ?>
+                                        <p class="<?php echo getStatus($rowaptjalan['unit_name'])->fetch(PDO::FETCH_COLUMN,0) ?>" title="<?php echo getDetail($rowaptjalan['unit_name'])->fetch(PDO::FETCH_COLUMN,0) ?>"><?php echo $rowaptjalan['unit_name'] ?></p>
+                                    <?php
+                                }
                             ?>
-                                <p class="<?php echo getStatus($rowaptdisposal['unit_name'])->fetch(PDO::FETCH_COLUMN, 0) ?>" title="<?php echo getDetail($rowaptdisposal['unit_name'])->fetch(PDO::FETCH_COLUMN, 0) ?>"><?php echo $rowaptdisposal['unit_name'] ?></p>
-                            <?php
-                        }
-                    ?>
-                </div>
-            </div>
-            <div class='aptarea'>
-                <h2><i class="fa fa-caret-square-down" style="margin-inline-end: 10px;"></i>Compac | PIT 2 (<?php echo filterUnitAPT('PIT 2', 'Compac')->fetchColumn()?> Unit) </h2>
-                <div>
-                <?php 
-                        while($rowaptjalan = $querycompacpit2->fetch(PDO::FETCH_ASSOC)){
+                        </div>
+                    </details>
+                    <details title="Click to Expand">
+                        <summary><i class="fa fa-check-double" style="margin-inline-end: 10px;"></i>PC 200 <span style="float: right"><?php echo filterUnitAPT('PIT 3', 'PC200')->fetchColumn()?> Unit</span></summary>
+                        <div>
+                            <?php 
+                                while($rowaptjalan = $querypcpit3->fetch(PDO::FETCH_ASSOC)){
+                                    ?>
+                                        <p class="<?php echo getStatus($rowaptjalan['unit_name'])->fetch(PDO::FETCH_COLUMN,0) ?>" title="<?php echo getDetail($rowaptjalan['unit_name'])->fetch(PDO::FETCH_COLUMN,0) ?>"><?php echo $rowaptjalan['unit_name'] ?></p>
+                                    <?php
+                                }
                             ?>
-                                <p class="<?php echo getStatus($rowaptjalan['unit_name'])->fetch(PDO::FETCH_COLUMN,0) ?>" title="<?php echo getDetail($rowaptjalan['unit_name'])->fetch(PDO::FETCH_COLUMN,0) ?>"><?php echo $rowaptjalan['unit_name'] ?></p>
-                            <?php
-                        }
-                    ?>
-                </div>
-            </div>
-            <div class='aptarea'>
-                <h2><i class="fa fa-check-double" style="margin-inline-end: 10px;"></i>PC 200 | PIT 2 (<?php echo filterUnitAPT('PIT 2', 'PC200')->fetchColumn()?> Unit) </h2>
-                <div>
-                <?php 
-                        while($rowaptjalan = $querypcpit2->fetch(PDO::FETCH_ASSOC)){
+                        </div>
+                    </details>
+                    <details title="Click to Expand">
+                        <summary><i class="fa fa-tint" style="margin-inline-end: 10px;"></i>Water Tank <span style="float: right"><?php echo filterUnitAPT('PIT 3', 'Water Tank')->fetchColumn()?> Unit</span></summary>
+                        <div>
+                            <?php 
+                                while($rowaptjalan = $querywtpit3->fetch(PDO::FETCH_ASSOC)){
+                                    ?>
+                                        <p class="<?php echo getStatus($rowaptjalan['unit_name'])->fetch(PDO::FETCH_COLUMN,0) ?>" title="<?php echo getDetail($rowaptjalan['unit_name'])->fetch(PDO::FETCH_COLUMN,0) ?>"><?php echo $rowaptjalan['unit_name'] ?></p>
+                                    <?php
+                                }
                             ?>
-                                <p class="<?php echo getStatus($rowaptjalan['unit_name'])->fetch(PDO::FETCH_COLUMN,0) ?>" title="<?php echo getDetail($rowaptjalan['unit_name'])->fetch(PDO::FETCH_COLUMN,0) ?>"><?php echo $rowaptjalan['unit_name'] ?></p>
-                            <?php
-                        }
-                    ?>
-                </div>
-            </div>
-            <div class='aptarea'>
-                <h2><i class="fa fa-tint" style="margin-inline-end: 10px;"></i>Water Tank | PIT 2 (<?php echo filterUnitAPT('PIT 2', 'Water Tank')->fetchColumn()?> Unit) </h2>
-                <div>
-                <?php 
-                        while($rowaptjalan = $querywtpit2->fetch(PDO::FETCH_ASSOC)){
-                            ?>
-                                <p class="<?php echo getStatus($rowaptjalan['unit_name'])->fetch(PDO::FETCH_COLUMN,0) ?>" title="<?php echo getDetail($rowaptjalan['unit_name'])->fetch(PDO::FETCH_COLUMN,0) ?>"><?php echo $rowaptjalan['unit_name'] ?></p>
-                            <?php
-                        }
-                    ?>
-                </div>
-            </div>
-        </div>
-        <div class="boxapt">
-            <div class='aptarea'>
-                <h2><i class="fa fa-snowplow " style="margin-inline-end: 10px;"></i>Dozer | PIT 3 (<?php echo filterUnitAPT('PIT 3', 'Dozer')->fetchColumn()?> Unit) </h2>
-                <div>
-                    <?php 
-                        while($rowaptfront = $querydozerpit3->fetch(PDO::FETCH_ASSOC)){
-                            ?>
-                                <p class="<?php echo getStatus($rowaptfront['unit_name'])->fetch(PDO::FETCH_COLUMN, 0) ?>" title="<?php echo getDetail($rowaptfront['unit_name'])->fetch(PDO::FETCH_COLUMN, 0)?>" ><?php echo $rowaptfront['unit_name'] ?></p>
-                            <?php
-                        }
-                    ?>
-                </div>
-            </div>
-            <div class='aptarea'>
-                <h2><i class="fa fa-road" style="margin-inline-end: 10px;"></i>Grader | PIT 3 (<?php echo filterUnitAPT('PIT 3', 'Grader')->fetchColumn()?> Unit) </h2>
-                <div>
-                <?php 
-                        while($rowaptdisposal = $querygraderpit3->fetch(PDO::FETCH_ASSOC)){
-                            ?>
-                                <p class="<?php echo getStatus($rowaptdisposal['unit_name'])->fetch(PDO::FETCH_COLUMN, 0) ?>" title="<?php echo getDetail($rowaptdisposal['unit_name'])->fetch(PDO::FETCH_COLUMN, 0) ?>"><?php echo $rowaptdisposal['unit_name'] ?></p>
-                            <?php
-                        }
-                    ?>
-                </div>
-            </div>
-            <div class='aptarea'>
-                <h2><i class="fa fa-caret-square-down" style="margin-inline-end: 10px;"></i>Compac | PIT 3 (<?php echo filterUnitAPT('PIT 3', 'Compac')->fetchColumn()?> Unit) </h2>
-                <div>
-                <?php 
-                        while($rowaptjalan = $querycompacpit3->fetch(PDO::FETCH_ASSOC)){
-                            ?>
-                                <p class="<?php echo getStatus($rowaptjalan['unit_name'])->fetch(PDO::FETCH_COLUMN,0) ?>" title="<?php echo getDetail($rowaptjalan['unit_name'])->fetch(PDO::FETCH_COLUMN,0) ?>"><?php echo $rowaptjalan['unit_name'] ?></p>
-                            <?php
-                        }
-                    ?>
-                </div>
-            </div>
-            <div class='aptarea'>
-                <h2><i class="fa fa-check-double" style="margin-inline-end: 10px;"></i>PC 200 | PIT 3 (<?php echo filterUnitAPT('PIT 3', 'PC200')->fetchColumn()?> Unit) </h2>
-                <div>
-                <?php 
-                        while($rowaptjalan = $querypcpit3->fetch(PDO::FETCH_ASSOC)){
-                            ?>
-                                <p class="<?php echo getStatus($rowaptjalan['unit_name'])->fetch(PDO::FETCH_COLUMN,0) ?>" title="<?php echo getDetail($rowaptjalan['unit_name'])->fetch(PDO::FETCH_COLUMN,0) ?>"><?php echo $rowaptjalan['unit_name'] ?></p>
-                            <?php
-                        }
-                    ?>
-                </div>
-            </div>
-            <div class='aptarea'>
-                <h2><i class="fa fa-tint" style="margin-inline-end: 10px;"></i>Water Tank | PIT 3 (<?php echo filterUnitAPT('PIT 3', 'Water Tank')->fetchColumn()?> Unit) </h2>
-                <div>
-                <?php 
-                        while($rowaptjalan = $querywtpit3->fetch(PDO::FETCH_ASSOC)){
-                            ?>
-                                <p class="<?php echo getStatus($rowaptjalan['unit_name'])->fetch(PDO::FETCH_COLUMN,0) ?>" title="<?php echo getDetail($rowaptjalan['unit_name'])->fetch(PDO::FETCH_COLUMN,0) ?>"><?php echo $rowaptjalan['unit_name'] ?></p>
-                            <?php
-                        }
-                    ?>
+                        </div>
+                    </details>
                 </div>
             </div>
         </div>

@@ -78,7 +78,10 @@
         </div>
    </div>
    <footer style="background: var(--blue1); margin-block-start: 0 !important;">
-       <p>Copyright &copy; 2022 PT. Bukit Asam (Persero) Tbk. | <a href="https://storyset.com/work"> Illustrations by Storyset</a> | SVG Background by <a target="_blank" href="https://bgjar.com">BGJar</a></p>
+       <p>Copyright &copy; 2022 PT. Bukit Asam (Persero) Tbk. 
+        <div style="margin-top: 20px">
+            <a href="https://storyset.com/work"> Illustrations by Storyset</a> | SVG Background by <a target="_blank" href="https://bgjar.com">BGJar</a> | Icons by <a target="_blank" href="https://fontawesome.com"> FontAwesome</a></p>
+        </div> 
    </footer>
    <div class="loginbox">
         <div class="loginform">

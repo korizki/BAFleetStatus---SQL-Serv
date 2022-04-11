@@ -21,9 +21,6 @@
         font-size: 0.7rem;
         text-align: center;
     }
-    .setUnit>p{
-        width: 55px !important;
-    }
     .brandptba{
         width: 140px;
         top: 15px;
@@ -136,7 +133,17 @@
     }
     .datainfo{
         font-size: 0.8rem;
-        padding: 10px 30px;
+        text-align: center;
+    }
+    .datainfo>table>thead>tr>th:nth-child(5){
+        display: none;
+    }
+    .datainfo>table>tbody>tr>td:nth-child(5){
+        display: none;
+    }
+    .datainfo table tbody tr td .shovelstatus{
+        font-size: 0.7rem;
+        padding: 5px 12px;
     }
     .shovelsummary>div{
         padding: 10px;
@@ -166,9 +173,6 @@
     }
     .coalsummary>div>h3{
         font-size: 0.8rem;
-    }
-    .coalsummary>div>p{
-        text-align: center;
     }
     .coalsummary>.shovelstatus{
         font-size: 0.7rem;

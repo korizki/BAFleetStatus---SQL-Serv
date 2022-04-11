@@ -70,14 +70,6 @@ main{
     padding-left: 20px;
     border-bottom: 2px solid var(--blue1);
 }
-.boxdetailshovel{
-    display: flex;
-    gap: 30px;
-    align-items: center;
-    border-bottom: 1px solid var(--line);
-    padding: 10px 0;
-    cursor: pointer;
-}
 .boxdetailshovel:hover{
     background: rgba(199, 199, 199, 0.20);
 }
@@ -495,13 +487,85 @@ figcaption>a{
     box-shadow: 5px 5px 20px 0 rgba(128, 128, 128, 0.300);
     margin-bottom: 10px;
 }
-.datainfo{
-    display: flex;
-    justify-content: space-between;
-    padding: 12px 30px;
-    background: rgba(14, 76, 133, 0.100);
-    color: rgba(14, 76, 133);
-    border: 1px solid var(--line);
+.datainfo table{
+   width: 100%;
+   border-collapse: collapse;
+}
+.datainfo>table>thead>tr{
+    border: 1px solid rgb(148, 176, 255);
     border-radius: 5px;
+    margin-bottom: 15px;
+}
+.datainfo>table>thead>tr>th{
+    background:rgba(148, 176, 255, 0.378);
+    padding: 10px 0;
+}
+.datainfo table tbody tr td{
+    text-align: center;
+    padding: 6px 0;
+}
+.datainfo table tbody tr td p{
+    font-size: 0.8rem;
+}
+.datainfo table tbody tr{
+    border: 1px solid var(--line);
+    margin: 10px;
+    transition: transform 0.3s ease;
+}
+.datainfo table tbody tr:hover{
+    cursor: pointer;
+    transform: translateX(5px);
+}
+.datainfo table tbody tr td .shovelstatus{
+    padding: 6px 15px;
+    font-size: 0.8rem;
+}
+.datainfo table tbody tr td .Ready{
+    background: rgba(0, 214, 0, 0.080);
+    border: 1px solid rgb(0,214,0);
+    color: rgb(0,214,0);
+}
+.datainfo table tbody tr td .Standby{
+    background: rgba(0, 78, 214, 0.08);
+    border: 1px solid rgb(0, 78,214);
+    color: rgb(0, 78,214);
+}
+.datainfo table tbody tr td .General{
+    background: rgba(242, 206, 5, 0.08);
+    border: 1px solid rgb(242, 206,5);
+    color: rgb(242, 206,5);
+}
+.datainfo table tbody tr td .Breakdown{
+    background: rgba(249, 61, 61, 0.08);
+    border: 1px solid rgb(249, 61, 61);
+    color: rgb(249, 61,61);
+}
+.boxShovel>details>summary{
+    list-style: none;
     font-weight: 600;
+    padding: 7px 10px;
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+    border-bottom: 1px solid var(--line);
+}
+.boxShovel>details>summary{
+    cursor: pointer;
+}
+.boxShovel>details>summary:focus{
+    border: none;
+    border-bottom: 1px solid var(--line);
+    outline: none;
+    box-shadow: none;
+}
+.boxShovel>details>div{
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    font-size: 0.72rem;
+    margin-bottom: 20px;
+}
+.boxShovel>details>div>p{
+    padding: 4px 8px;
+    color: white;
+    border-radius: 3px;
 }

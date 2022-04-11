@@ -97,3 +97,7 @@ function getDetail($unitnamehis){
     include "connection.php";
     return $connection->query("SELECT his_detail FROM t_historybd WHERE his_unit_name = '$unitnamehis' ORDER BY id_his DESC");
 };
+function getUnitType($unitnames){
+    include "connection.php";
+    return $connection->query("SELECT unit_type FROM t_unit WHERE unit_name = '$unitnames'");
+};

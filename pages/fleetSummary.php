@@ -23,8 +23,11 @@
         <?php include "pit2Equipment.php" ?>
         <?php include "pit3Equipment.php" ?>
     </main>
-    <footer style="margin-top: 0">
-        <p>Copyright &copy; 2022  PT. Bukit Asam (Persero) Tbk. | Icon by Font Awesome | Illustration by Storyset.com</p>
-    </footer>
+    <footer style="background: var(--blue1); margin-block-start: 0 !important;">
+       <p>Copyright &copy; 2022 PT. Bukit Asam (Persero) Tbk. 
+        <div style="margin-top: 20px">
+            <a href="https://storyset.com/work"> Illustrations by Storyset</a> | SVG Background by <a target="_blank" href="https://bgjar.com">BGJar</a> | Icons by <a target="_blank" href="https://fontawesome.com"> FontAwesome</a></p>
+        </div> 
+   </footer>
 </body>
 </html>

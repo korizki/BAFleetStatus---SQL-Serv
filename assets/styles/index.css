@@ -544,7 +544,7 @@ figcaption>a{
     list-style: none;
     font-weight: 600;
     padding: 7px 10px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     font-size: 1.2rem;
     border-bottom: 1px solid var(--line);
 }
@@ -568,4 +568,37 @@ figcaption>a{
     padding: 4px 8px;
     color: white;
     border-radius: 3px;
+}
+.detailunit>p{
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+}
+.detailunit>h3{
+    font-size: 1.2rem;
+}
+.bdetailunit{
+    display: flex; 
+    justify-content:space-around;
+    gap: 10px;
+    margin: 20px 0;
+    align-items: center;
+}
+.papt{
+    font-size: 0.8rem;
+    margin: 13px 0;
+}
+.papt>span{
+    margin-right: 6px;
+    padding: 4px 10px;
+    border-radius: 2px;
+}
+.aptready{
+    background: rgba(20, 126, 20, 0.2);
+    color: rgb(20,126,20);
+    border: 1px solid rgb(20,126,20);
+}
+.aptbreakdown{
+    background: rgba(223, 66, 66, 0.2);
+    color: rgb(223, 66, 66);
+    border: 1px solid rgb(223, 66, 66);
 }

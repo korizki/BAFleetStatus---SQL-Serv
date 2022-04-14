@@ -145,6 +145,13 @@
         font-size: 0.7rem;
         padding: 5px 12px;
     }
+    .shovelsummary{
+        display: flex;
+        flex-direction: column;
+    }
+    .detailunit>p{
+        margin-bottom: 10px;
+    }
     .shovelsummary>div{
         padding: 10px;
         line-height: 1;

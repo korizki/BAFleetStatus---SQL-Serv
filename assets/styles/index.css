@@ -593,12 +593,12 @@ figcaption>a{
     border-radius: 2px;
 }
 .aptready{
-    background: rgba(20, 126, 20, 0.2);
+    background: rgba(20, 126, 20, 0.1);
     color: rgb(20,126,20);
     border: 1px solid rgb(20,126,20);
 }
 .aptbreakdown{
-    background: rgba(223, 66, 66, 0.2);
+    background: rgba(223, 66, 66, 0.1);
     color: rgb(223, 66, 66);
     border: 1px solid rgb(223, 66, 66);
 }

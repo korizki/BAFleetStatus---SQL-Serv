@@ -80,7 +80,7 @@
                             <th>Loader Info</th>
                             <th>Status</th>
                             <th>Setting Fleet</th>
-                            <th>Flow</th>
+                            <th>Flow / Detail</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -104,7 +104,7 @@
                                                 <p> <?php echo (getFleet($rowshovel['unit_name'], 'HD PPA')->fetchColumn(2) == 0) ? "" : getFleet($rowshovel['unit_name'], 'HD PPA')->fetchColumn(2)." HD PPA"; ?></p>
                                             </div>
                                         </td>
-                                        <td><p style="text-align:center"><?php echo getflow($rowshovel['unit_name'])->fetchColumn(2);?></p></td>
+                                        <td><p style="text-align:center"><?php echo (getStatus($rowshovel['unit_name'])->fetch(PDO::FETCH_COLUMN, 0) == 'Ready') ? getflow($rowshovel['unit_name'])->fetchColumn(2) : getStatus($rowshovel['unit_name'])->fetch(PDO::FETCH_COLUMN, 0).' - '.getDetail($rowshovel['unit_name'])->fetch(PDO::FETCH_COLUMN, 0);?></p></td>
                                     </tr>
                                 <?php
                             }
@@ -271,7 +271,7 @@
                             <th>Loader Info</th>
                             <th>Status</th>
                             <th>Setting Fleet</th>
-                            <th>Flow</th>
+                            <th>Flow / Detail</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -295,7 +295,7 @@
                                                 <p> <?php echo (getFleet($rowshovel['unit_name'], 'HD PPA')->fetchColumn(2) == 0) ? "" : getFleet($rowshovel['unit_name'], 'HD PPA')->fetchColumn(2)." HD PPA"; ?></p>
                                             </div>
                                         </td>
-                                        <td><p style="text-align:center"><?php echo getflow($rowshovel['unit_name'])->fetchColumn(2);?></p></td>
+                                        <td><p style="text-align:center"><?php echo (getStatus($rowshovel['unit_name'])->fetch(PDO::FETCH_COLUMN, 0) == 'Ready') ? getflow($rowshovel['unit_name'])->fetchColumn(2) : getStatus($rowshovel['unit_name'])->fetch(PDO::FETCH_COLUMN, 0).' - '.getDetail($rowshovel['unit_name'])->fetch(PDO::FETCH_COLUMN, 0);?></p></td>
                                     </tr>
                                 <?php
                             }

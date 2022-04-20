@@ -2,11 +2,11 @@
 
 function filterUnitAPT($area, $type){
     include "connection.php";
-    return $connection->query("SELECT COUNT(unit_name) FROM t_unit WHERE area = '$area' AND status IN('Ready','Breakdown','General','Standby') AND unit_type = '$type'");
+    return $connection->query("SELECT COUNT(unit_name) FROM t_unit WHERE area = '$area' AND status IN('Ready','Breakdown') AND unit_type = '$type'");
 };
 function filterUnitAPTCom($area, $type){
     include "connection.php";
-    return $connection->query("SELECT * FROM t_unit WHERE area = '$area' AND status IN('Ready','Breakdown','General','Standby') AND unit_type = '$type' ORDER BY unit_name ASC");
+    return $connection->query("SELECT * FROM t_unit WHERE area = '$area' AND status IN('Ready','Breakdown') AND unit_type = '$type' ORDER BY unit_name ASC");
 };
 // Filter APT PIT 2
 $querydozerpit2 = filterUnitAPTCom('PIT 2', 'Dozer');
